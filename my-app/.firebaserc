@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "burger-queen-229b3": {
+      "hosting": {
+        "my-app": [
+          "burger-queen-229b3"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "burger-queen-229b3"
+  }
+}
