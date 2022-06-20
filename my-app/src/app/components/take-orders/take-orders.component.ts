@@ -13,8 +13,7 @@ export class TakeOrdersComponent implements OnInit {
   faChampagneGlasses = faChampagneGlasses;
   faRightFromBracket = faRightFromBracket;
   constructor() { }
-
   ngOnInit(): void {
   }
-
+ 
 }
