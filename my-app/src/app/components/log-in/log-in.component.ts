@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import{FirebaseService} from '../../services-firebase/firebase.service'
+import{FirestoreService} from '../../services-firestore/firestore.service'
 
 @Component({
   selector: 'app-log-in',
@@ -9,28 +12,72 @@ import{FirebaseService} from '../../services-firebase/firebase.service'
 })
 export class LogInComponent implements OnInit {
   dataUser:FormGroup;
-  constructor( private formBuil : FormBuilder , private fireValid : FirebaseService) {
+  constructor( private formBuil : FormBuilder ,
+    private fireValid : FirebaseService,
+    private newRoute: Router,
+    private firestore: FirestoreService,
+    private snackBar: MatSnackBar) {
     this.dataUser = this.formBuil.group({
-      email: ['', Validators.required],
-      password : ['', Validators.required]
+      email: ['', Validators.required, Validators.email],
+      password : ['', Validators.required],
+      role : ['' , Validators.required]
     })
-    console.log(this.dataUser)
   }
-  submitDataUser(){
-    const emailUser = this.dataUser.value.email
-    const passwordUser = this.dataUser.value.password
-    const valid = this.fireValid.login(emailUser, passwordUser)
-    valid.then((data)=> {
-      const emailValid = `${data.user.email}`
-      if(emailValid.indexOf('m') === 0){
-        console.log('HOLA SOY MESERA')
+
+  submit(){
+    this.fireValid.login(this.dataUser.value.email, this.dataUser.value.password)
+    .then((data)=>{
+      console.log(data)
+      if(this.dataUser.value.role === 'chef'){
+            this.firestore.getUserData(data.user.uid, 'chefs')
+            .then((docResult)=>{
+              if( docResult === undefined){
+                this.errRol()
+              } else if(docResult['role'] === this.dataUser.value.role){
+                  this.newRoute.navigate(['/chef-view'])
+              }
+            })
+     }
+      if(this.dataUser.value.role === 'waiter'){
+        this.firestore.getUserData(data.user.uid, 'waiters')
+        .then((docResult)=>{
+          if(docResult === undefined){
+            this.errRol()
+          } else if(docResult['role'] === this.dataUser.value.role){
+              this.newRoute.navigate(['/take-orders'])
+          }
+        })
       }
+    }).catch((err)=>{
+      console.log(err)
     })
-    .catch((err)=> console.log(err))
-    this.dataUser.reset()
   }
-  
-  
+
+  errRol(){
+    this.snackBar.open('Rol incorrecto. Seleccione su rol nuevamente', 'Aceptar',{
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top'
+    } )
+  }
+
+  // errFirebase(err : string){
+  //   if(err ==='FirebaseError: Firebase: Error (auth/invalid-email).'){
+  //     this.snackBar.open('Email incorrecto. Ingrese nuevamente su email', 'Aceptar', {
+  //         duration: 3000,
+  //         horizontalPosition: 'center',
+  //         verticalPosition: 'top'
+  //       } )
+  //   }
+    // switch(err){
+    //   case 'Firebase: Error (auth/user-not-found).':
+    //     this.snackBar.open('Email incorrecto. Ingrese nuevamente su email', 'Aceptar', {
+    //       duration: 3000,
+    //       horizontalPosition: 'center',
+    //       verticalPosition: 'top'
+    //     } )
+    // break;
+
   ngOnInit(): void {
   }
 }

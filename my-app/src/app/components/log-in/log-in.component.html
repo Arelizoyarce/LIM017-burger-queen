@@ -1,15 +1,33 @@
 <section class="logInSection">
-    <div class="containerHeader">
-        <img src="#">
-        <h1>CiCy's Burger</h1>
-    </div>
-    <form>
-        <div class="containerInputs">
-            <label for="email">Email:</label>
-            <input id="email" class="inputLogin"type="text">
-            <label for="password">Contraseña:</label>
-            <input id="password" class="inputLogin" type="password">
-            <a class="button" routerLink="/take-orders">Ingresar</a>
+    <div class="containerLogin">
+    <div class="loginImageContainer"></div>
+    <section class="containerFormSection">
+        <div class="containerHeader">
+            <picture>
+                <img src="../../../assets/img/burgerLogo.png">
+            </picture>
+            <h1>Cicy's Burger</h1>
         </div>
-    </form>
+        <form (ngSubmit)="submit()"[formGroup]="dataUser">
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field>
+            <mat-error *ngIf="">
+            </mat-error>
+            <mat-form-field appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input matInput formControlName="password" type="password">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Selecciona tu rol</mat-label>
+                <mat-select formControlName="role">
+                <mat-option value="waiter">Meserx</mat-option>
+                <mat-option value="chef">Cocinerx</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="black" type="submit">Ingresar</button>
+        </form>
+    </section>
+</div>
 </section>

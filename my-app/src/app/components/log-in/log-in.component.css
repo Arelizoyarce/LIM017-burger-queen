@@ -1,36 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap');
-*{
-    margin: 0px;
-    padding: 0px;
-    background-color: palevioletred;
-}
 .logInSection{
     font-family: 'Poppins', sans-serif;
+    background: linear-gradient(221.67deg, #FD6B5A 3.85%, #FFFFFF 110.33%);
+    background-repeat: no-repeat;
+    height: 100%;
 }
-.containerInputs{
+.containerLogin{
+    display: grid;
+    grid-template-areas: "img log-in";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+}
+.containerHeader img{
+    margin: 0px 0px 0px 15px;
+}
+
+.containerFormSection{
+    grid-area: log-in;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+form{
     display: flex;
     flex-direction: column;
 }
-input{
-    border-radius: 30px;
-    border: none;
-    background-color: #fff;
-    height:45px;
-    width: 339px;
-    margin: 10px 0px 30px 0px;
-}
-label{
-    font-weight: 900;
-    margin-left: 15px;
-}
-a{
-    background-color: black;
-    color: #fff;
-    border-radius: 30px;
-    height:45px;
-    width: 339px;
-    margin: 10px 0px 0px 0px;
-    text-align: center;
-    text-decoration: none;
+button{
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
     font-size: 20px;
+}
+.loginImageContainer{
+    grid-area: img;
+    background-image: url(./../../../assets/img/imgLogIn.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
