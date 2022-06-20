@@ -1,29 +1,33 @@
 <section class="logInSection">
     <div class="containerLogin">
-        <picture class="containerFirstImg">
-            <img class="firstImg" src="">
-        </picture>
-        <div class="containerFormSection">
-            <div class="containerHeader">
-                <img src="./../../../assets/img/burgerLogo.png">
-                <h1>CiCy's Burger</h1>
-            </div>
-            <form (ngSubmit)="validate()" [formGroup]="dataUser">
-                <div class="containerInputs">
-                    <label for="email">Email:</label>
-                    <input id="email" class="inputLogin"type="text" formControlName="email">
-                    <label for="password">Contraseña:</label>
-                    <input id="password" class="inputLogin" type="password" formControlName="password">
-                    <span></span>
-                    <label for="selectRole"> Selecciona tu rol:</label>
-                    <select id="selectRole" formControlName="role">
-                        <option selected> Meserx </option>
-                        <option> Cocinerx </option>
-                    </select>
-                    <span></span>
-                    <button type="submit">Ingresar</button>
-                </div>
-            </form>
+    <div class="loginImageContainer"></div>
+    <section class="containerFormSection">
+        <div class="containerHeader">
+            <picture>
+                <img src="../../../assets/img/burgerLogo.png">
+            </picture>
+            <h1>Cicy's Burger</h1>
         </div>
-    </div>
+        <form (ngSubmit)="submit()"[formGroup]="dataUser">
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field>
+            <mat-error *ngIf="">
+            </mat-error>
+            <mat-form-field appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input matInput formControlName="password" type="password">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Selecciona tu rol</mat-label>
+                <mat-select formControlName="role">
+                <mat-option value="waiter">Meserx</mat-option>
+                <mat-option value="chef">Cocinerx</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="black" type="submit">Ingresar</button>
+        </form>
+    </section>
+</div>
 </section>

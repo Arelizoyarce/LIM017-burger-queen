@@ -4,22 +4,22 @@
 
 
 .containerHeaderSection{
-    font-family: 'Poppins', sans-serif;
-    background-color: #FC6A59;
-    background: linear-gradient(90.47deg, #FC6A59 30.87%, #FFFFFF 141.79%);
     width: 90%;
     height: 70px;
     position: fixed;
     top: 0;
     z-index: 200;
-    border-radius: 30px;
 }
 
 .containerHeader{
     display: flex;
     justify-content: space-between;
     width: 95%;
+    font-family: 'Poppins', sans-serif;
     margin-top: 10px;
+    background-color: #FC6A59;
+    background: linear-gradient(90.47deg, #FC6A59 30.87%, #FFFFFF 141.79%);
+    border-radius: 30px;
 }
 
 

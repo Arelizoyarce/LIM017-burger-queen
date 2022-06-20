@@ -1,35 +1,13 @@
 <section class="viewWaiterSection">
-        <mat-toolbar>
-            <div>
-            <img id="logo" src="#">
-            <h1>CiCy's Burger</h1>
-            </div>
+    <div class="containerHeaderSection">
+            <mat-toolbar class="containerHeader"> 
+            <span> Mi aplicación </span> 
             <button id="viewOrders">Ver Pedidos</button>
-        </mat-toolbar>
+          </mat-toolbar>
+    </div>
+    <div>
         <mat-sidenav-container>
-            <mat-sidenav-content>
-                <fa-icon class="iconLateralMenu" [icon]="faUtensils"></fa-icon>
-                <p>Todos</p>
-                <fa-icon class="iconLateralMenu" [icon]="faCoffee"></fa-icon>
-                <p>Desayuno</p>
-                <fa-icon class="iconLateralMenu" [icon]="faBurger"></fa-icon>
-                <p>Almuerzo y cena</p>
-                <fa-icon class="iconLateralMenu" [icon]="faChampagneGlasses"></fa-icon>
-                <p>Bebidas</p>
-                <fa-icon id="logOut" [icon]="faRightFromBracket"></fa-icon>
-            </mat-sidenav-content>
-          </mat-sidenav-container>
-    <!-- </div> -->
-        <!-- <div class="containerHeader">
-            <div class="logoAndName">
-                <img id="logo" src="#">
-                <h1>CiCy's Burger</h1>
-            </div>
-            <button id="viewOrders">Ver Pedidos</button>
-        </div> -->
-    <!-- </div>
-    <div class="lateralMenu">
-        <div class="containerIcons">
+            <mat-sidenav mode="side" opened>
             <fa-icon class="iconLateralMenu" [icon]="faUtensils"></fa-icon>
             <p>Todos</p>
             <fa-icon class="iconLateralMenu" [icon]="faCoffee"></fa-icon>
@@ -39,9 +17,21 @@
             <fa-icon class="iconLateralMenu" [icon]="faChampagneGlasses"></fa-icon>
             <p>Bebidas</p>
             <fa-icon id="logOut" [icon]="faRightFromBracket"></fa-icon>
-        </div>  
-    </div>   -->
-    <!-- <div class="containerOrderAndFood">
+            </mat-sidenav>
+        </mat-sidenav-container>
+    </div>
+        <!-- <div class="containerIcons">
+            <fa-icon class="iconLateralMenu" [icon]="faUtensils"></fa-icon>
+            <p>Todos</p>
+            <fa-icon class="iconLateralMenu" [icon]="faCoffee"></fa-icon>
+            <p>Desayuno</p>
+            <fa-icon class="iconLateralMenu" [icon]="faBurger"></fa-icon>
+            <p>Almuerzo y cena</p>
+            <fa-icon class="iconLateralMenu" [icon]="faChampagneGlasses"></fa-icon>
+            <p>Bebidas</p>
+            <fa-icon id="logOut" [icon]="faRightFromBracket"></fa-icon>
+        </div>   -->
+    <div class="containerOrderAndFood">
         <div class="allCards">    
             <div class="containerFood">
                 <img src="#">
@@ -55,9 +45,3 @@
             </div>
         </div>
         <div class="containerOrder">
-            <p>Mesero</p>
-            <p>ID:</p>
-        </div>
-        <button id="deliverOrder">Entregar Orden</button>   
-    </div> -->
-</section>
