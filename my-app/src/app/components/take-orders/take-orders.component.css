@@ -1,0 +1,66 @@
+.viewWaiterSection{
+    margin-left: 75px;
+}
+
+
+.containerHeaderSection{
+    width: 90%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+.containerHeader{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 10px;
+    background-color: #FC6A59;
+    background: linear-gradient(90.47deg, #FC6A59 30.87%, #FFFFFF 141.79%);
+    border-radius: 30px;
+}
+
+
+.logoAndName{
+    width: 20%;
+    height: 5px;
+    display: flex;
+    align-items: center;
+    transform: translate(20px);
+    padding: 20px 30px;
+}
+
+#logo{
+    margin-right: 20px;
+}
+
+#viewOrders{
+    background-color: black;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.lateralMenu{
+    background-color: #FFC0A0;   
+    background: linear-gradient(179.1deg, #FFC0A0 30.47%, rgba(255, 192, 160, 0) 120.55%);
+    width: 80px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+}
+
+.containerIcons{
+    margin-top: 20px;
+    position:absolute;
+    text-align: center;
+}
+
+p{
+ margin-bottom: 10px;
+} 
