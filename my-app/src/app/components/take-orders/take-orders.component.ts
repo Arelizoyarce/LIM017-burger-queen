@@ -16,5 +16,5 @@ export class TakeOrdersComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+ 
 }
