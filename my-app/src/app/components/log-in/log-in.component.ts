@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import{FirebaseService} from '../../services-firebase/firebase.service'
-import{FirestoreService} from '../../services-firestore/firestore.service'
+import{FirebaseService} from '../../services/services-firebase/firebase.service'
+import{FirestoreService} from '../../services/services-firestore/firestore.service'
 
 @Component({
   selector: 'app-log-in',
