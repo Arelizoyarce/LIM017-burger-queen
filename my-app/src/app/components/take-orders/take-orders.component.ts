@@ -14,9 +14,9 @@ export class TakeOrdersComponent implements OnInit {
   faChampagneGlasses = faChampagneGlasses;
   faRightFromBracket = faRightFromBracket;
   constructor( private firestore: FirestoreService) { }
-  getProducts(){
-    console.log(this.firestore.getDataProducts())
-  }
+  // getProducts(){
+  //   console.log(this.firestore.getDataProducts())
+  // }
   ngOnInit(): void {
   }
  
