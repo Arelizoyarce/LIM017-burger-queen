@@ -12,8 +12,9 @@ export class FirestoreService {
     const e = await getDoc(doc(this.firestore, 'users', id));
      return e.data();
     }
+    getDataProducts(): Observable<any>{
+      return collectionData(collection(this.firestore, 'menu'), {
+      })
+    }
 }
-  //  getDataProducts(){
-  //   return collectionData(collection(this.firestore, 'menu'), {
-  //   })
-  //  }
+

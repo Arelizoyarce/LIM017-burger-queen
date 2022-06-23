@@ -12,35 +12,35 @@ import { FirestoreService } from '../../services/services-firestore/firestore.se
 })
 export class LogInComponent implements OnInit {
   dataUser:FormGroup;
-  constructor( private formBuil : FormBuilder ,
+  constructor( private formBuild : FormBuilder ,
     private firebase : FirebaseService,
     private newRoute: Router,
     private firestore: FirestoreService,
     private snackBar: MatSnackBar
     ) {}
-
+    
     ngOnInit(): void {
-    this.dataUser = this.formBuil.group({
-      email: ['', [Validators.required, Validators.email]],
-      password : ['', [Validators.required]]
-    })
-  }
+      this.dataUser = this.formBuild.group({
+        email: ['', [Validators.required, Validators.email]],
+        password : ['', [Validators.required]]
+      })
+    }
 
-  async submit(): Promise<void> {
-    try {
-      const data = await this.firebase.login(this.dataUser.value.email, this.dataUser.value.password);
+  submit(){
+    this.firebase.login(this.dataUser.value.email, this.dataUser.value.password)
+    .then((data)=>{
       this.firestore.getUserRole(data.user.uid)
         .then((docResult) => {
-          console.log(docResult);
           if (docResult['role'] === 'waiter') {
             this.newRoute.navigate(['/take-orders']);
           } else if (docResult['role'] === 'chef') {
             this.newRoute.navigate(['/chef-view']);
           }
-        });
-    } catch {
-      this.errRol();
-    }
+        }).catch(()=>{
+          this.errRol();
+        })
+    })
+    
   }
 
   errRol(){
@@ -49,5 +49,5 @@ export class LogInComponent implements OnInit {
       horizontalPosition: 'center',
       verticalPosition: 'top'
     } )
-  }  
+  }
 }

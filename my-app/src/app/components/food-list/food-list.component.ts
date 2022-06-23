@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Storage, ref, listAll, getDownloadURL } from '@angular/fire/storage';
-//import { FirestoreService } from '../../services/services-firestore/firestore.service'
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { getDownloadURL } from '@angular/fire/storage';
+import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
+import {ServicesStorageService } from 'src/app/services/services-storage/services-storage.service'
 
 @Component({
   selector: 'app-food-list',
@@ -8,29 +9,38 @@ import { Storage, ref, listAll, getDownloadURL } from '@angular/fire/storage';
   styleUrls: ['./food-list.component.css']
 })
 export class FoodListComponent implements OnInit {
-  images: string[];
+menu: any[] = [];
+images: string[];
+
   constructor(
-    private storage : Storage,
-    // private firestore: FirestoreService,
-    ) {
-      this.images = [];
-    }
-    ngOnInit(): void {
-      this.getImages()
-    }
-  getImages(){
-    const imagesRef = ref(this.storage, 'cafeAmericano.jpg');
-    listAll(imagesRef)
-    .then(async response => {
-      console.log(response)
-      this.images = [];
-      for (let item of response.items){
-        const urlImg = await getDownloadURL(item);
-        this.images.push(urlImg);
-      }
-    })
-    .catch(err =>{
-    console.log(err)  
+    private firestore : FirestoreService,
+    private storage : ServicesStorageService
+  ) { }
+  ngOnInit(): void {
+    console.log('im here')
+    this.printData()
+    this.printImg()
+  }
+  printData(){
+    this.firestore.getDataProducts()
+    .subscribe((menu)=>{
+      this.menu = [];
+      menu.forEach(e =>{
+        this.menu.push({
+          name: e['name'],
+          price: e['price']
+        })
+      })
     })
   }
+printImg(){
+this.storage.getImages()
+.then(async (response)=>{
+  this.images = [];
+  for (let item of response.items){
+    const urlImg = await getDownloadURL(item);
+    this.images.push(urlImg)
+    console.log(urlImg)
+}})}
+
 }

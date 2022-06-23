@@ -38,9 +38,22 @@ describe('LogInComponent', () => {
   it('Está creado', () => {
     expect(component).toBeTruthy();
   });
+  //Validación de formulario
   it('Debe retornar formulario invalido si algún campo está vacío', () => {
     const email = component.dataUser.controls['email']
     email.setValue('mesera@cicysburger.com');
     expect(component.dataUser.invalid).toBeTrue();
   });
+  it('Debe retornar formulario valido todo está relleno', () => {
+    const email = component.dataUser.controls['email']
+    const password = component.dataUser.controls['password']
+    email.setValue('mesera@cicysburger.com');
+    password.setValue('laboratoria');
+    expect(component.dataUser.invalid).toBeFalse();
+  });
+  //Validar botón
+  //Validar si logIn recibe los parametros adecuados
+//   it('Debe LogIn recibir los argumentos correctos', () => {
+// expect(component.submit).()
+// })
 });

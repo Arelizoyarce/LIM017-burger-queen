@@ -18,6 +18,6 @@ export class TakeOrdersComponent implements OnInit {
   //   console.log(this.firestore.getDataProducts())
   // }
   ngOnInit(): void {
+
   }
- 
 }
