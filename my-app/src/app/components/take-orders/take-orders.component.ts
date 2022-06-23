@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {faUtensils, faCoffee, faBurger, faChampagneGlasses, faRightFromBracket} from '@fortawesome/free-solid-svg-icons'
+import {faUtensils, faCoffee, faBurger, faChampagneGlasses, faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
+import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 
 @Component({
   selector: 'app-take-orders',
@@ -12,8 +13,11 @@ export class TakeOrdersComponent implements OnInit {
   faBurger = faBurger;
   faChampagneGlasses = faChampagneGlasses;
   faRightFromBracket = faRightFromBracket;
-  constructor() { }
+  constructor( private firestore: FirestoreService) { }
+  // getProducts(){
+  //   console.log(this.firestore.getDataProducts())
+  // }
   ngOnInit(): void {
+
   }
- 
 }
