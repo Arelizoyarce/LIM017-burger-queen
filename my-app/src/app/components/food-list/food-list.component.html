@@ -1,1 +1,11 @@
-<p>food-list works!</p>
+<section class="foodListContainer">
+    <div class="containerCards" *ngFor = "let item of menu">
+        <mat-card>
+            <mat-card-title>{{item.name}}</mat-card-title>
+            <mat-card-subtitle>{{item.price}}</mat-card-subtitle>
+        </mat-card>
+    </div>
+    <div class="foodImages">
+        <img [src]="image" *ngFor="let image of images" width="200">
+    </div>   
+</section>

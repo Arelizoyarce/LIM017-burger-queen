@@ -7,6 +7,7 @@ import { FirestoreServiceMock } from 'src/app/__mocks__/firestore.service.mock';
 import { FirebaseServiceMock } from 'src/app/__mocks__/firebase.service.mock';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { LogInComponent } from '../../components/log-in/log-in.component';
 
 describe('LogInComponent', () => {
@@ -22,6 +23,7 @@ describe('LogInComponent', () => {
         MatSnackBarModule,
       ],
       declarations: [ LogInComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
       providers:[{provide: FirebaseService, useClass: FirebaseServiceMock},
         {provide: FirestoreService, useClass: FirestoreServiceMock}
       ]
@@ -36,7 +38,22 @@ describe('LogInComponent', () => {
   it('Está creado', () => {
     expect(component).toBeTruthy();
   });
+  //Validación de formulario
   it('Debe retornar formulario invalido si algún campo está vacío', () => {
-
+    const email = component.dataUser.controls['email']
+    email.setValue('mesera@cicysburger.com');
+    expect(component.dataUser.invalid).toBeTrue();
   });
+  it('Debe retornar formulario valido todo está relleno', () => {
+    const email = component.dataUser.controls['email']
+    const password = component.dataUser.controls['password']
+    email.setValue('mesera@cicysburger.com');
+    password.setValue('laboratoria');
+    expect(component.dataUser.invalid).toBeFalse();
+  });
+  //Validar botón
+  //Validar si logIn recibe los parametros adecuados
+//   it('Debe LogIn recibir los argumentos correctos', () => {
+// expect(component.submit).()
+// })
 });

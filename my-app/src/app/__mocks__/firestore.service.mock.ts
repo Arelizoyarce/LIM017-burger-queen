@@ -1,7 +1,5 @@
+import { DocumentData } from "@angular/fire/firestore/firebase";
+
 export class FirestoreServiceMock {
-    getUserRole(){
-        return {
-            id: ''
-        };
-       }
+    getUserRole: () => Promise<DocumentData>
 }
