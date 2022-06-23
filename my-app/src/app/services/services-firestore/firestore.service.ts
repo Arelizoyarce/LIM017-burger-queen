@@ -8,11 +8,12 @@ import { Observable } from 'rxjs';
 export class FirestoreService {
 
   constructor(private firestore : Firestore) { }
-   getUserRole(id: string){
-    return getDoc(doc(this.firestore, 'users', id));
-   }
+  async getUserRole(id: string){
+    const e = await getDoc(doc(this.firestore, 'users', id));
+     return e.data();
+    }
+}
   //  getDataProducts(){
   //   return collectionData(collection(this.firestore, 'menu'), {
   //   })
   //  }
-}
