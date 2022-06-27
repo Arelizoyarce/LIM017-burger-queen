@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed, fakeAsync, waitForAsync, inject, tick } from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {RouterTestingModule} from '@angular/router/testing';
 import { FirebaseService } from 'src/app/services/services-firebase/firebase.service';
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 import { FirestoreServiceMock } from 'src/app/__mocks__/firestore.service.mock';
@@ -12,6 +12,8 @@ import { Location } from '@angular/common';
 import { RouterLinkWithHref } from '@angular/router'
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { LogInComponent } from '../../components/log-in/log-in.component';
+import { Router } from '@angular/router';
+
 
 describe('LogInComponent', () => {
   let component: LogInComponent;
@@ -54,19 +56,27 @@ describe('LogInComponent', () => {
     password.setValue('laboratoria');
     expect(component.dataUser.invalid).toBeFalse();
   });
-  it('Debe ir a la otra ruta', () => {
-    fixture.detectChanges();
-    let btnElement = fixture.debugElement.query(By.css('button.btnSubmit'))
-    btnElement.nativeElement.click()
-    // fixture.whenStable().then(()=>{
-      const location: Location = TestBed.inject(Location);
-      expect(location.path()).toEqual('/take-orders');
-    // })
+  //Validar botón
+  it('Debe llamar al método submit', () => {
+   const btn = fixture.debugElement.query(By.css('.btnSubmit'))
+   const router = TestBed.inject(Router);
+   let location: Location;
+   btn.nativeElement.click()
+   const expectPath = '/chef-'
+  component.submit()
+  .then(()=>{
+    expect(location.path()).toBe(expectPath)
+  })
   });
-  // it('Debe ir a la otra ruta', () => {
-  //   const btnElement = fixture.debugElement.query(By.css('button.btnSubmit'))
-  //   btnElement.nativeElement.click()
-  //   const location: Location = TestBed.inject(Location);
-  //   expect(location.path()).toEqual('/take-orders');
-  // })
-});
+  // it('Debe ir a la otra ruta', () => waitForAsync (() =>{
+  //   fixture.detectChanges();
+  //   let btnElement = fixture.debugElement.queryAll(By.css('.btnSubmit'))
+  //   btnElement[0].nativeElement.click()
+  //   fixture.whenStable().then(()=>{
+  //     const location: Location = TestBed.inject(Location);
+  //     expect(location.path()).toEqual('/take');
+  //   })
+  // }));
+
+})
+
