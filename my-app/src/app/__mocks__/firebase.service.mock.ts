@@ -1,8 +1,14 @@
+import { UserCredential } from "@angular/fire/auth";
 
 export class FirebaseServiceMock {
-    login( ){
-    return {
-        email: 'cocinera@cicysburger.com',
-        id: 'hola'
-    }}
+    login(): Promise<any> {
+    return Promise.resolve({
+        user: {
+            email: 'cocinera@cicysburger.com',
+            uid: 'dR7eRoYwmYcKHXVvMQm4SoRXSKm2'
+        },
+        operationType: "signIn",
+        providerId: null,
+    })
+}
 }
