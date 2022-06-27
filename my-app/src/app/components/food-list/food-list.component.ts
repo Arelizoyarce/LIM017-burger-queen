@@ -1,7 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { getDownloadURL } from '@angular/fire/storage';
+import { Component, OnInit} from '@angular/core';
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
-import {ServicesStorageService } from 'src/app/services/services-storage/services-storage.service'
 
 @Component({
   selector: 'app-food-list',
@@ -10,16 +8,12 @@ import {ServicesStorageService } from 'src/app/services/services-storage/service
 })
 export class FoodListComponent implements OnInit {
 menu: any[] = [];
-images: string[];
 
   constructor(
-    private firestore : FirestoreService,
-    private storage : ServicesStorageService
+    private firestore : FirestoreService
   ) { }
   ngOnInit(): void {
-    console.log('im here')
     this.printData()
-    this.printImg()
   }
   printData(){
     this.firestore.getDataProducts()
@@ -28,19 +22,10 @@ images: string[];
       menu.forEach(e =>{
         this.menu.push({
           name: e['name'],
-          price: e['price']
+          price: e['price'],
+          img: e['img']
         })
       })
     })
   }
-printImg(){
-this.storage.getImages()
-.then(async (response)=>{
-  this.images = [];
-  for (let item of response.items){
-    const urlImg = await getDownloadURL(item);
-    this.images.push(urlImg)
-    console.log(urlImg)
-}})}
-
 }
