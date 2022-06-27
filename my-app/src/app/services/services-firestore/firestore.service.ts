@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class FirestoreService {
 
   constructor(private firestore : Firestore) { }
+  
   async getUserRole(id: string){
     const e = await getDoc(doc(this.firestore, 'users', id));
      return e.data();
