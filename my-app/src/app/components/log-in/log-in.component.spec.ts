@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, waitForAsync, inject, tick } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FirebaseService } from 'src/app/services/services-firebase/firebase.service';
@@ -6,7 +6,10 @@ import { FirestoreService } from 'src/app/services/services-firestore/firestore.
 import { FirestoreServiceMock } from 'src/app/__mocks__/firestore.service.mock';
 import { FirebaseServiceMock } from 'src/app/__mocks__/firebase.service.mock';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
-
+import { By } from '@angular/platform-browser';
+import { Location } from '@angular/common';
+// import { Routes } from 'src/app/app-routing.module';
+import { RouterLinkWithHref } from '@angular/router'
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { LogInComponent } from '../../components/log-in/log-in.component';
 
@@ -51,9 +54,19 @@ describe('LogInComponent', () => {
     password.setValue('laboratoria');
     expect(component.dataUser.invalid).toBeFalse();
   });
-  //Validar botón
-  //Validar si logIn recibe los parametros adecuados
-//   it('Debe LogIn recibir los argumentos correctos', () => {
-// expect(component.submit).()
-// })
+  it('Debe ir a la otra ruta', () => {
+    fixture.detectChanges();
+    let btnElement = fixture.debugElement.query(By.css('button.btnSubmit'))
+    btnElement.nativeElement.click()
+    // fixture.whenStable().then(()=>{
+      const location: Location = TestBed.inject(Location);
+      expect(location.path()).toEqual('/take-orders');
+    // })
+  });
+  // it('Debe ir a la otra ruta', () => {
+  //   const btnElement = fixture.debugElement.query(By.css('button.btnSubmit'))
+  //   btnElement.nativeElement.click()
+  //   const location: Location = TestBed.inject(Location);
+  //   expect(location.path()).toEqual('/take-orders');
+  // })
 });
