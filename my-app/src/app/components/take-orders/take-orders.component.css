@@ -1,8 +1,3 @@
-.viewWaiterSection{
-
-}
-
-
 .containerHeaderSection{
     width: 100%;
     position: fixed;
@@ -14,56 +9,88 @@
     display: flex;
     justify-content: space-between;
     width: 90%;
-    height: 90px;
+    height: 70px;
     color: #fff;
     font-family: 'Poppins', sans-serif;
     margin: 10px 0px 10px 90px;
     background: linear-gradient(90.47deg, #FC6A59 30.87%, #FFFFFF 141.79%);
     border-radius: 40px;
-}
-
-.containerHeader img{
-    width: 38.35px;
-height: 36px;
-margin: 20px;
 }   
 
-.containerHeader div {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-}
-
-
-.logoAndName{
+.containerLogoAndName{
     width: 20%;
     height: 5px;
     display: flex;
     align-items: center;
     transform: translate(20px);
-    padding: 20px 30px;
+    padding: 30px 30px;
+    font-size: 5px;
 }
 
-#logo{
+.containerLogoAndName img{
     margin-right: 20px;
+    width: 40px;
+    height: 40px; 
+    object-fit:contain;
 }
-
+.containerLogoAndName h1{
+    font-size: 20px;
+}
 #viewOrders{
     background-color: black;
     color: #fff;
     text-align: center;
-    padding: 10px 20px 10px 20px;
+    margin: 15px;
     border-radius: 30px;
     border: none;
     font-size: 18px;
+    width: 140px;
+    height: 40px;
     cursor: pointer;
 }
 
 .lateralMenu{
-    background-color: #FFC0A0;   
-    background: linear-gradient(179.1deg, #FFC0A0 30.47%, rgba(255, 192, 160, 0) 120.55%);
+    background: #FFC0A0;   
+    background-color: linear-gradient(179.1deg, #FFC0A0 30.47%, rgba(255, 192, 160, 0) 120.55%);
     width: 80px;
     height: 100%;
     position: fixed;
+}
+
+.containerIcon{
+    padding-top:100px;
+    padding-left: 12px;
+    position:absolute;
+}
+
+.boxIcon{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    position: relative;
+    color:#000000;
+  }
+
+.iconLateralMenu{
+    font-size: 25px;
+}
+
+.iconLogOut{
+    padding-top: 50px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    color:#000000;
+  }
+
+.boxIcon h5 {
+  margin-top: 3px;
+  align-content: center;
+  padding-right:5px;
 }
