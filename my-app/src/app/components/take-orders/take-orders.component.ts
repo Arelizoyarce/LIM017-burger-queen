@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faUtensils, faCoffee, faBurger, faChampagneGlasses, faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
+import {faUtensils, faCoffee, faBurger, faChampagneGlasses, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 
 @Component({

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {RouterTestingModule} from '@angular/router/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 import { FirebaseService } from 'src/app/services/services-firebase/firebase.service';
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 import { FirestoreServiceMock } from 'src/app/__mocks__/firestore.service.mock';
@@ -9,7 +9,7 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { By } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 // import { Routes } from 'src/app/app-routing.module';
-import { RouterLinkWithHref } from '@angular/router'
+// import { RouterLinkWithHref } from '@angular/router'
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { LogInComponent } from '../../components/log-in/log-in.component';
 import { Router } from '@angular/router';
