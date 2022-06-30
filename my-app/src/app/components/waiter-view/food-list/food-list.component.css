@@ -1,16 +1,20 @@
-.containerAllCards{
+.containerInfoFood{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+.foodListContainer{
+    padding-left: 100px;
     height: 100%;
-    display: flex;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     margin-top: 100px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 .containerCards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
     width: 157px;
     height: 196px;
     margin: 12px 20px 12px 20px;
@@ -35,4 +39,7 @@
     background-color: #fff;
     padding: 5px 10px 5px 10px;
     border-radius: 6px;
+}
+.orderListContainer{
+    margin-top: 50%;
 }
