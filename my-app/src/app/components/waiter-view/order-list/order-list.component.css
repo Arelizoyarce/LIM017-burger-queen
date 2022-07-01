@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 .orderListContainer{
   margin-top: 150px;
   padding-left: 40px;
+=======
+.containerOrder{
+    background-color: aquamarine;
+    width: 200px;
+    height: 700px;
+>>>>>>> motherBranch
 }
 
 .containerData{

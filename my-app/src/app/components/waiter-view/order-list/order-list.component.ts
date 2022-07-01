@@ -12,11 +12,16 @@ export class OrderListComponent implements OnInit {
   faCircleMinus = faCircleMinus;
   
   @Input() product : any[]
-
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.product)
   }
 
+  amoutIncrements(){
+    this.product.forEach(e=>{
+      e['amount'] +=1
+      e['cost'] += e['cost']
+    })
+  }
 }
