@@ -1,14 +1,69 @@
-.containerOrder{
-    background-color: aquamarine;
-    width: 200px;
-    height: 700px;
-}
 .orderListContainer{
-    margin-top: 50%;
+  margin-top: 150px;
+  padding-left: 40px;
 }
 
-table {
-  border: 1px solid black;
-  width: 100px;
-  height: 50px;
+.containerData{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+.numberId{
+padding-right: 225px;
+}
+
+.tableContainer {
+border-collapse: collapse;
+width: 27.5em;
+height: 50px;
+margin-top: 20px;
+}
+
+.tableContainer thead tr{
+border: 1px dashed #000000;
+}
+
+.tableContainer thead tr td{
+font-size: 15px;
+letter-spacing: 1px;
+color: red;
+padding: 7px;
+}
+
+.tableContainer tbody tr td{
+font-size: 15px;
+padding: 8px;
+}
+
+.tableContainer tfoot tr{
+border: 1px dashed #000000;
+}
+
+.tableContainer tfoot tr td{
+font-size: 15px;
+letter-spacing: 1px;
+color: green;
+padding: 7px;
+}
+
+.tableContainer tbody tr{
+border: 1px dashed #000000;
+}
+
+.faCirclePlus{
+  filter: invert(24%) sepia(99%) saturate(1897%) hue-rotate(93deg) brightness(96%) contrast(107%);
+}
+
+.faCircleMinus{
+  filter: invert(12%) sepia(68%) saturate(7324%) hue-rotate(4deg) brightness(107%) contrast(119%);
+}
+.orderBtn{
+  background-color: black;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 18px;  
+  cursor: pointer;
+  margin-top: 20px;
+  padding-right: 326px;
 }

@@ -1,23 +1,42 @@
 <div class="orderListContainer">
-    <div class="containerData">
-      <h4>Mesero:<input type="text" class="nameWaiter"></h4>
-      <h4>ID:<input type="text" class="numberId"></h4>
-      <h3>N° Mesa:<input type="text" class="numberTable"></h3> 
-    </div>
-    <table class="orderContainer" *ngFor="let item of product">
+  <div class="containerData">
+    <h4>Mesero:<input type="text" class="nameWaiter"></h4>
+    <h4 class="numberId">ID:<input type="text"></h4>
+  </div>
+  <div>
+    <select class="numberTable">
+      <option value=1>Mesa 01</option>
+      <option value=2>Mesa 02</option>
+      <option value=3>Mesa 03</option>
+      <option value=4>Mesa 04</option>
+      <option value=5>Mesa 05</option>
+      <option value=6>Mesa 06</option>
+    </select> 
+  </div>
+  <table class="tableContainer">
+    <thead>
       <tr>
+        <td align="center">Producto</td>
+        <td colspan="3" align="center">Cantidad</td>
+        <td align="center">Precio</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of product">
         <td>{{item.product}}</td>
         <td><fa-icon class="faCirclePlus" [icon]="faCirclePlus"></fa-icon></td>
-        <td>-</td>
+        <td>--</td>
         <td><fa-icon class="faCircleMinus" [icon]="faCircleMinus"></fa-icon></td>
         <td>{{item.cost}}</td>
-        <td><fa-icon class="iconTrash" [icon]="faTrashCan"></fa-icon></td>
+        <td><fa-icon class="iconTrash" [icon]="faTrashCan">IconoTrash</fa-icon></td>
       </tr>
-    </table>
+    </tbody>
+    <tfoot>
       <tr>
         <td colspan="4">Total</td>
-        <td>variable de total</td>
+        <td colspan="2" align="left">$37</td>
       </tr>
-
-    <button class="sendOrder">Enviar Orden</button>
-  </div>
+    </tfoot>
+  </table>
+  <button class="orderBtn">Enviar Orden</button>
+</div>
