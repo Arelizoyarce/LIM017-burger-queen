@@ -1,0 +1,45 @@
+.containerInfoFood{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+.foodListContainer{
+    padding-left: 100px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 100px;
+    /* overflow-y: scroll; */
+}
+.containerCards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    width: 157px;
+    height: 196px;
+    margin: 12px 20px 12px 20px;
+}
+.name{
+    position: relative;
+    top: 40px;
+    margin: 0px 10px 0px 25px;
+    background-color: #fff;
+    padding: 9px;
+    border-radius: 5px;
+}
+.img{
+    width: 157px;
+    height: 196px;
+    border-radius: 5px;
+}
+.price{
+    position: relative;
+    bottom: 35px;
+    left: 70%;
+    background-color: #fff;
+    padding: 5px 10px 5px 10px;
+    border-radius: 6px;
+}
+.orderListContainer{
+    margin-top: 50%;
+}

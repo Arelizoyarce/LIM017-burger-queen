@@ -1,0 +1,23 @@
+<div class="orderListContainer">
+    <div class="containerData">
+      <h4>Mesero:<input type="text" class="nameWaiter"></h4>
+      <h4>ID:<input type="text" class="numberId"></h4>
+      <h3>N° Mesa:<input type="text" class="numberTable"></h3> 
+    </div>
+    <table class="orderContainer" *ngFor="let item of product">
+      <tr>
+        <td>{{item.product}}</td>
+        <td><fa-icon class="faCirclePlus" [icon]="faCirclePlus" (click)="amoutIncrements()"></fa-icon></td>
+        <td>{{item.amount}}</td>
+        <td><fa-icon class="faCircleMinus" [icon]="faCircleMinus"></fa-icon></td>
+        <td>{{item.cost}}</td>
+        <td><fa-icon class="iconTrash" [icon]="faTrashCan"></fa-icon></td>
+      </tr>
+    </table>
+      <tr>
+        <td colspan="4">Total</td>
+        <td> - </td>
+      </tr>
+
+    <button class="sendOrder">Enviar Orden</button>
+  </div>

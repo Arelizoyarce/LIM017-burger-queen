@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { FirestoreService } from 'src/app/services/services-firestore/firestore.
 })
 export class FoodListComponent implements OnInit {
 menu: any[] = [];
+product: any[] =[];
 
   constructor(
     private firestore : FirestoreService
@@ -17,9 +18,9 @@ menu: any[] = [];
   }
   printData(){
     this.firestore.getDataProducts()
-    .subscribe((menu)=>{
-      this.menu = [];
-      menu.forEach(e =>{
+    .subscribe((result)=>{
+      console.log(result)
+      result.forEach(e =>{
         this.menu.push({
           name: e['name'],
           price: e['price'],
@@ -28,5 +29,13 @@ menu: any[] = [];
       })
     })
   }
-}
+
+sendProduct( name: string, price: number){
+this.product.push({
+  product: name,
+  cost: price,
+  amount: 1,
+})
+}}
+
 
