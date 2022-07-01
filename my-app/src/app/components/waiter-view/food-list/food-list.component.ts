@@ -19,6 +19,7 @@ product: any[] =[];
   printData(){
     this.firestore.getDataProducts()
     .subscribe((result)=>{
+      console.log(result)
       result.forEach(e =>{
         this.menu.push({
           name: e['name'],
@@ -35,7 +36,8 @@ product: any[] =[];
 sendProduct( name: string, price: number){
 this.product.push({
   product: name,
-  cost: price
+  cost: price,
+  amount: 1,
 })
 }}
 
