@@ -29,9 +29,6 @@ product: any[] =[];
       })
     })
   }
-<<<<<<< HEAD:my-app/src/app/components/food-list/food-list.component.ts
-}
-=======
 
 sendProduct( name: string, price: number){
 this.product.push({
@@ -42,4 +39,3 @@ this.product.push({
 }}
 
 
->>>>>>> d59424baae459776de16ed64caa521c81efcf7aa:my-app/src/app/components/waiter-view/food-list/food-list.component.ts
