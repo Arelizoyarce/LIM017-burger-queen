@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
+import { FirestoreServiceMock } from 'src/app/__mocks__/firestore.service.mock';
 
 import { FoodListComponent } from './food-list.component';
 
@@ -8,7 +10,8 @@ describe('FoodListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FoodListComponent ]
+      declarations: [ FoodListComponent ],
+      providers:[{ provide: FirestoreService, useClass: FirestoreServiceMock }]
     })
     .compileComponents();
 
