@@ -24,11 +24,11 @@
     <tbody>
       <tr *ngFor="let item of orderListProduct">
         <td>{{item.name}}</td>
-        <td><fa-icon class="faCirclePlus" [icon]="faCirclePlus" (click)="amoutIncrements()"></fa-icon></td>
+        <td><fa-icon class="faCirclePlus" [icon]="faCirclePlus"></fa-icon></td>
         <td>{{item.amount}}</td>
         <td><fa-icon class="faCircleMinus" [icon]="faCircleMinus"></fa-icon></td>
         <td>{{item.price}}</td>
-        <td><fa-icon class="iconTrash" [icon]="faTrashCan" (click)="deleteProduct(item.index)>IconoTrash</fa-icon></td>
+        <td><fa-icon class="iconTrash" [icon]="faTrashCan" (click)="deleteProduct(item.index)">IconoTrash</fa-icon></td>
       </tr>
     </tbody>
     <tfoot>
