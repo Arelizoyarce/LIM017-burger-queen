@@ -1,4 +1,6 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import orderProduct from 'src/app/interfaces/order-product.interface';
+import Product from 'src/app/interfaces/product.interface';
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 
 @Component({
@@ -7,35 +9,29 @@ import { FirestoreService } from 'src/app/services/services-firestore/firestore.
   styleUrls: ['./food-list.component.css']
 })
 export class FoodListComponent implements OnInit {
-menu: any[] = [];
-product: any[] =[];
+  menu: Product[];
+  summary: orderProduct[] = [];
+  dishesOrder: orderProduct;
+  indexProduct: number = 0
 
   constructor(
-    private firestore : FirestoreService
+    private firestore: FirestoreService
   ) { }
   ngOnInit(): void {
     this.printData()
   }
-  printData(){
-    this.firestore.getDataProducts()
-    .subscribe((result)=>{
-      console.log(result)
-      result.forEach(e =>{
-        this.menu.push({
-          name: e['name'],
-          price: e['price'],
-          img: e['img']
-        })
-      })
+  printData() {
+    this.firestore.getDataProducts().subscribe(dishes => {
+      this.menu = dishes
     })
   }
 
-sendProduct( name: string, price: number){
-this.product.push({
-  product: name,
-  cost: price,
-  amount: 1,
-})
-}}
+  sendProduct(name: string, price: number, amount: number) {
+    const index = this.indexProduct++;
+    this.dishesOrder = {name, price, amount,index}
+    this.summary.push(this.dishesOrder)
+    console.log('SOY EL SUMARIO', this.summary)
+  }
+}
 
 

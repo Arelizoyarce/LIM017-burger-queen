@@ -7,7 +7,7 @@
     padding-left: 100px;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 100px;
     /* overflow-y: scroll; */
 }
@@ -41,5 +41,16 @@
     border-radius: 6px;
 }
 .orderListContainer{
-    margin-top: 50%;
+    margin-top: 32%;
+}
+
+@media screen and (min-width: 1368px){
+    .foodListContainer{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* overflow-y: scroll; */
+     }
+     .orderListContainer{
+        margin-top: 28%;
+    }
 }

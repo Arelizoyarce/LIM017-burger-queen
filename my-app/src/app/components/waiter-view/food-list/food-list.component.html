@@ -1,12 +1,12 @@
 <section class="containerInfoFood">
 <div class="foodListContainer">
     <div class="containerCards" *ngFor = "let item of menu">
-        <mat-card class="card" (click)="sendProduct(item.name , item.price)">
+        <mat-card class="card" (click)="sendProduct(item.name , item.price, 1)">
             <mat-card-title class="name">{{item.name}}</mat-card-title>
             <img mat-card-image src="{{item.img}}"  class="img">
             <mat-card-subtitle class="price"> ${{item.price}}</mat-card-subtitle>
         </mat-card>
-      </div>
-  </div>
-<app-order-list [product]="product" class="orderListContainer"></app-order-list>
+    </div>
+</div>
+<app-order-list [orderListProduct]="summary" class="orderListContainer"></app-order-list>
 </section>
