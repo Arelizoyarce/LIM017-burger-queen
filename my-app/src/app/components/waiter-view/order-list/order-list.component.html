@@ -1,4 +1,4 @@
-<div class="orderListContainer">
+<div class="orderSection">
   <div class="containerData">
     <h4>Mesero:<input type="text" class="nameWaiter"></h4>
     <h4 class="numberId">ID:<input type="text"></h4>
@@ -24,13 +24,8 @@
     <tbody>
       <tr *ngFor="let item of product">
         <td>{{item.product}}</td>
-<<<<<<< HEAD
-        <td><fa-icon class="faCirclePlus" [icon]="faCirclePlus"></fa-icon></td>
-        <td>--</td>
-=======
         <td><fa-icon class="faCirclePlus" [icon]="faCirclePlus" (click)="amoutIncrements()"></fa-icon></td>
         <td>{{item.amount}}</td>
->>>>>>> motherBranch
         <td><fa-icon class="faCircleMinus" [icon]="faCircleMinus"></fa-icon></td>
         <td>{{item.cost}}</td>
         <td><fa-icon class="iconTrash" [icon]="faTrashCan">IconoTrash</fa-icon></td>
@@ -39,11 +34,7 @@
     <tfoot>
       <tr>
         <td colspan="4">Total</td>
-<<<<<<< HEAD
         <td colspan="2" align="left">$37</td>
-=======
-        <td> - </td>
->>>>>>> motherBranch
       </tr>
     </tfoot>
   </table>
