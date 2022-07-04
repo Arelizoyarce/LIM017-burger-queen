@@ -13,11 +13,10 @@ describe('LogInComponent', () => {
   let fixture: ComponentFixture<LogInComponent>;
   let mockRouter = {
     navigate: jasmine.createSpy('navigate').and.callFake(() => {
-      console.log("ESJECUTO este SPY")
+      console.log("EJECUTO este SPY")
     })
   }
   
-
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [
