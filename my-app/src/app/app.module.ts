@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import {MatButtonModule} from '@angular/material/button';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppComponent } from './app.component';
 import { LogInComponent } from './components/log-in/log-in.component';
@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FoodListComponent } from './components/waiter-view/food-list/food-list.component';
 import { OrderListComponent } from './components/waiter-view/order-list/order-list.component';
 import { NavbarLateralComponent } from './components/waiter-view/navbar-lateral/navbar-lateral/navbar-lateral.component';
+import { ViewOrdersComponent } from './components/waiter-view/view-orders/view-orders.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NavbarLateralComponent } from './components/waiter-view/navbar-lateral/
     ChefViewComponent,
     FoodListComponent,
     OrderListComponent,
-    NavbarLateralComponent
+    NavbarLateralComponent,
+    ViewOrdersComponent,
   ],
   imports: [
     BrowserModule,
