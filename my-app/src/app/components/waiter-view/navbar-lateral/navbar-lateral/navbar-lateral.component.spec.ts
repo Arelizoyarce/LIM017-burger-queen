@@ -1,18 +1,18 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { ChefViewComponent } from '../../components/chef-view/chef-view.component';
+// import { NavbarLateralComponent } from './navbar-lateral.component';
 
-// describe('ChefViewComponent', () => {
-//   let component: ChefViewComponent;
-//   let fixture: ComponentFixture<ChefViewComponent>;
+// describe('NavbarLateralComponent', () => {
+//   let component: NavbarLateralComponent;
+//   let fixture: ComponentFixture<NavbarLateralComponent>;
 
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
-//       declarations: [ ChefViewComponent ]
+//       declarations: [ NavbarLateralComponent ]
 //     })
 //     .compileComponents();
 
-//     fixture = TestBed.createComponent(ChefViewComponent);
+//     fixture = TestBed.createComponent(NavbarLateralComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

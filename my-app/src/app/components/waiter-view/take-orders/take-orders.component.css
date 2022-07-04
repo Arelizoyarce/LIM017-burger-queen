@@ -1,0 +1,56 @@
+.containerHeaderSection{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+.containerHeader{
+    display: flex;
+    justify-content: space-between;
+    width: 89%;
+    height: 70px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 0px 10px 90px;
+    background: linear-gradient(90.47deg, #FC6A59 30.87%, #FFFFFF 141.79%);
+    border-radius: 40px;
+}   
+
+.containerLogoAndName{
+    width: 20%;
+    height: 5px;
+    display: flex;
+    align-items: center;
+    transform: translate(20px);
+    padding: 30px 30px;
+    font-size: 5px;
+}
+
+.containerLogoAndName img{
+    margin-right: 20px;
+    width: 40px;
+    height: 40px; 
+    object-fit:contain;
+}
+.containerLogoAndName h1{
+    font-size: 20px;
+}
+#viewOrders{
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    margin: 15px;
+    border-radius: 30px;
+    border: none;
+    font-size: 18px;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1368px){
+.containerHeader{
+    width: 93%;
+}    
+} 

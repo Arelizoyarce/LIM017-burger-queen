@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import{FirebaseService} from '../../services-firebase/firebase.service'
+import { FirebaseService } from '../../services/services-firebase/firebase.service'
+import { FirestoreService } from '../../services/services-firestore/firestore.service'
 
 @Component({
   selector: 'app-log-in',
@@ -9,33 +11,44 @@ import{FirebaseService} from '../../services-firebase/firebase.service'
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
-  dataUser:FormGroup;
-  constructor( private formBuil : FormBuilder , private fireValid : FirebaseService, private newRoute: Router) {
-    this.dataUser = this.formBuil.group({
-      email: ['', Validators.required],
-      password : ['', Validators.required],
-      role : ['' , Validators.required]
-    })
-  }
-  submitDataUser(){
-    const emailUser = this.dataUser.value.email
-    const passwordUser = this.dataUser.value.password
-    const role = this.dataUser.value.role
-    const validUser = this.fireValid.login(emailUser, passwordUser)
-    validUser.then((data)=> {
-      const userWorker = {
-        email: emailUser,
-        id: data.user.uid,
-        role: role
-      }
-      if(userWorker.role === 'Meserx'){
-        this.newRoute.navigate(['/take-orders'])
-      } else {
-        this.newRoute.navigate(['/chef-view'])
-      }
-    })
-    .catch((err)=> console.log(err))
-  }
+  dataUser: FormGroup;
+  constructor(private formBuild: FormBuilder,
+    private firebase: FirebaseService,
+    private newRoute: Router,
+    private firestore: FirestoreService,
+    private snackBar: MatSnackBar
+  ) { }
+
   ngOnInit(): void {
+    this.dataUser = this.formBuild.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]]
+    })
+  }
+
+  submit() {
+    return this.firebase.login(this.dataUser.value.email, this.dataUser.value.password)
+      .then((data) => {
+        console.log(data)
+        this.firestore.getUserRole(data.user.uid)
+          .then((docResult) => {
+            if (docResult['role'] === 'waiter') {
+              console.log('submit:¨entra si doResult.role es waiter');
+              this.newRoute.navigate(['/take-orders']);
+            } else if (docResult['role'] === 'chef') {
+              this.newRoute.navigate(['/chef-view']);
+            }
+          })
+      }).catch(() => {
+        this.errRol();
+      })
+
+  }
+  errRol() {
+    this.snackBar.open('Contraseña o correo incorrecto. Ingresar nuevamente', 'Aceptar', {
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top'
+    })
   }
 }

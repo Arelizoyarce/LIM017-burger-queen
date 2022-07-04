@@ -1,18 +1,18 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { ChefViewComponent } from '../../components/chef-view/chef-view.component';
+// import { TakeOrdersComponent } from './take-orders.component';
 
-// describe('ChefViewComponent', () => {
-//   let component: ChefViewComponent;
-//   let fixture: ComponentFixture<ChefViewComponent>;
+// describe('TakeOrdersComponent', () => {
+//   let component: TakeOrdersComponent;
+//   let fixture: ComponentFixture<TakeOrdersComponent>;
 
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
-//       declarations: [ ChefViewComponent ]
+//       declarations: [ TakeOrdersComponent ]
 //     })
 //     .compileComponents();
 
-//     fixture = TestBed.createComponent(ChefViewComponent);
+//     fixture = TestBed.createComponent(TakeOrdersComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });
