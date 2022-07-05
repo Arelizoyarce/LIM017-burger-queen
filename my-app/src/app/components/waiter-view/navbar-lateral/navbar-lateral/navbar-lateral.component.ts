@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { faBurger, faChampagneGlasses, faCoffee, faRightFromBracket, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import { FirebaseService } from 'src/app/services/services-firebase/firebase.service';
@@ -15,6 +15,8 @@ export class NavbarLateralComponent implements OnInit {
   faBurger = faBurger;
   faChampagneGlasses = faChampagneGlasses;
   faRightFromBracket = faRightFromBracket;
+  @Output() filter =  new EventEmitter<string>()
+
 
   constructor(private firestore: FirestoreService,
     private firebase: FirebaseService,
@@ -22,7 +24,9 @@ export class NavbarLateralComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  filterEventSend(type:string){
+    this.filter.emit(type)
+  }
   logOut(){
     this.firebase.logout()
     .then(()=>{
