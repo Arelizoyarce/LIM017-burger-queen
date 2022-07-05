@@ -8,15 +8,16 @@ import { FirestoreService } from 'src/app/services/services-firestore/firestore.
   templateUrl: './food-list.component.html',
   styleUrls: ['./food-list.component.css']
 })
+
 export class FoodListComponent implements OnInit {
   menu: Product[];
   summary: orderProduct[] = [];
   dishesOrder: orderProduct;
   indexProduct: number = 0
-
   constructor(
     private firestore: FirestoreService
   ) { }
+
   ngOnInit(): void {
     this.printData()
   }

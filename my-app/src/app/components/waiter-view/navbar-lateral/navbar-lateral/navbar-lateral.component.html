@@ -1,11 +1,11 @@
 <div>
     <mat-sidenav-container class="lateralMenu">
-            <div class="containerIcon">
+            <div class="containerIcon" (click)="filterCategories($event)" data-value="">
                 <div class="boxIcon">
                     <fa-icon class="iconLateralMenu" [icon]="faUtensils"></fa-icon>
                     <h5>All</h5>
                 </div>
-                <div class="boxIcon">
+                <div class="boxIcon" data-value="breakfast">
                     <fa-icon class="iconLateralMenu" [icon]="faCoffee"></fa-icon>
                     <h5>Breakfast</h5>
                 </div>
