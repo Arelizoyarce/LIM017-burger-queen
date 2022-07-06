@@ -1,29 +1,48 @@
 import { By } from '@angular/platform-browser';
-import { ComponentFixture, TestBed,fakeAsync,tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { Router } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/services-firebase/firebase.service';
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LogInComponent } from '../log-in/log-in.component';
-import { Auth } from '@angular/fire/auth';
+import { DocumentData } from '@angular/fire/firestore';
 
 describe('LogInComponent', () => {
   let component: LogInComponent;
   let fixture: ComponentFixture<LogInComponent>;
-  let serviceFb: FirebaseService
-  const fakeAuth = {}
-  serviceFb = new FirebaseService(fakeAuth as Auth)
+  // let serviceFb: FirebaseService
+  // const fakeAuth = {}
+  // serviceFb = new FirebaseService(fakeAuth as Auth)
 
-  let mockFirebase = {
-    
+  class FirebaseServiceMock {
+    login(): Promise<any> {
+      return Promise.resolve({
+        user: {
+          email: 'mesera@cicysburger.com',
+          uid: 'dR7eRoYwmYcKHXVvMQm4SoRXSKm2'
+        },
+        operationType: "signIn",
+        providerId: null,
+      })
+    }
+  }
+
+  class FirestoreServiceMock {
+    getUserRole(id: string): Promise<DocumentData> {
+       if( id === 'dR7eRoYwmYcKHXVvMQm4SoRXSKm2' ){
+        return Promise.reject({ role: 'chef' })
+       }
+      return Promise.resolve({ role: 'waiter' })
+    }
   }
   let mockRouter = {
+    
     navigate: jasmine.createSpy('navigate').and.callFake(() => {
       console.log("EJECUTO este SPY")
     })
   }
-  
+
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [
@@ -34,8 +53,9 @@ describe('LogInComponent', () => {
       declarations: [LogInComponent],
       providers: [
         { provide: Router, useValue: mockRouter },
-        {provide: FirebaseService, useValue: serviceFb}
-    ]
+        { provide: FirebaseService, useClass: FirebaseServiceMock },
+        { provide: FirestoreService, useClass: FirestoreServiceMock}
+      ]
     })
       .compileComponents();
 
