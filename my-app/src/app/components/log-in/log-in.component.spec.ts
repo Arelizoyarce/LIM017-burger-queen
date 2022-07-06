@@ -2,11 +2,10 @@ import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed,fakeAsync,tick } from '@angular/core/testing';
 import { Router } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FirebaseService } from 'src/app/services/services-firebase/firebase.service';
-import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
+// import { FirebaseService } from 'src/app/services/services-firebase/firebase.service';
+// import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LogInComponent } from '../log-in/log-in.component';
-
 
 describe('LogInComponent', () => {
   let component: LogInComponent;

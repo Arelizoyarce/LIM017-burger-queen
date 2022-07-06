@@ -1,25 +1,25 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 
-import { FoodListComponent } from './food-list.component';
+// import { FoodListComponent } from './food-list.component';
 
-describe('FoodListComponent', () => {
-  let component: FoodListComponent;
-  let fixture: ComponentFixture<FoodListComponent>;
+// describe('FoodListComponent', () => {
+//   let component: FoodListComponent;
+//   let fixture: ComponentFixture<FoodListComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ FoodListComponent ],
-      providers:[{ provide: FirestoreService}]
-    })
-    .compileComponents();
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       declarations: [ FoodListComponent ],
+//       providers:[{ provide: FirestoreService}]
+//     })
+//     .compileComponents();
 
-    fixture = TestBed.createComponent(FoodListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//     fixture = TestBed.createComponent(FoodListComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });
