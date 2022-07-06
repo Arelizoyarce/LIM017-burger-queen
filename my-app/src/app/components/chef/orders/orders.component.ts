@@ -9,6 +9,7 @@ import { FirestoreService } from 'src/app/services/services-firestore/firestore.
 })
 export class OrdersComponent implements OnInit {
   orders: sendOrderList[] = []
+  oneSummaryOrder: any[] = []
   constructor(private firestore: FirestoreService) { }
 
   ngOnInit(): void {
@@ -16,7 +17,20 @@ export class OrdersComponent implements OnInit {
   }
   printOrder() {
     this.firestore.getOrder().subscribe((order) => {
+      console.log('soy order', order)
       this.orders = order
+      order.forEach((ordenes) => {
+        this.oneSummaryOrder.push(ordenes.order)
+      })
     })
+    return this.oneSummaryOrder
   }
+
+  // changeStatusOrder(timepara: number){
+  //   this.orders.map(element =>{
+  //     if(element.time === timepara){
+
+  //     }
+  //   })
+  // }
 }

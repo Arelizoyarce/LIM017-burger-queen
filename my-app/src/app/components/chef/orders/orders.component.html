@@ -1,16 +1,18 @@
 <section class="orderCardsContainer">
     <mat-card class="orderCard" *ngFor="let order of orders">
-        <mat-card-title>{{order.table}}</mat-card-title>
-        <mat-card-content>
-            <p>This card has divider and indeterminate progress as footer</p>
-            <p>hola</p>
-            <p>hola</p>
-            <p>hola</p>
-            <p>hola</p>
+        <mat-card-title>Mesa: {{order.table}}</mat-card-title>
+        <mat-card-content value="{{order.status}}">
+            <p>{{order.time}}---- {{order.status}}</p>
+            <div>
+                <p>{{order.order}}</p>
+                <p>hola</p>
+                <p>hola</p>
+            </div>
+            <p>{{order.total}}</p>
         </mat-card-content>
         <mat-divider inset></mat-divider>
         <mat-card-actions>
-            <button mat-button>Pedido Listo</button>
+            <button mat-button>Actualizar pedido</button>
         </mat-card-actions>
     </mat-card>
 </section>

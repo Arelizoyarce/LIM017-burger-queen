@@ -6,11 +6,18 @@ import { FirebaseService } from 'src/app/services/services-firebase/firebase.ser
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LogInComponent } from '../log-in/log-in.component';
-
+import { Auth } from '@angular/fire/auth';
 
 describe('LogInComponent', () => {
   let component: LogInComponent;
   let fixture: ComponentFixture<LogInComponent>;
+  let serviceFb: FirebaseService
+  const fakeAuth = {}
+  serviceFb = new FirebaseService(fakeAuth as Auth)
+
+  let mockFirebase = {
+    
+  }
   let mockRouter = {
     navigate: jasmine.createSpy('navigate').and.callFake(() => {
       console.log("EJECUTO este SPY")
@@ -25,7 +32,10 @@ describe('LogInComponent', () => {
         MatSnackBarModule,
       ],
       declarations: [LogInComponent],
-      providers: [{ provide: Router, useValue: mockRouter },]
+      providers: [
+        { provide: Router, useValue: mockRouter },
+        {provide: FirebaseService, useValue: serviceFb}
+    ]
     })
       .compileComponents();
 
