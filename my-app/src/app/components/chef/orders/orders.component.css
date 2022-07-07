@@ -7,15 +7,28 @@
     flex-wrap: wrap;
     align-content: flex-start;
     align-items: center;
-    margin-top: 13%;
 }
 .orderCard{
     width: 300px;
-    height: 313px;
+    min-height: 313px;
     background: #FFC0A0;
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
+}
+.orderCard div{
+    display: flex;
+    flex-direction: row;
+}
+.containerTitles p{
+    width: 190px;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 17px;
+}
+.contentSummary p {
+    width: 190px;
+    text-align: left;
 }
 button{
     display: flex;
