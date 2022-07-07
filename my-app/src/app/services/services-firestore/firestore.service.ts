@@ -23,5 +23,9 @@ export class FirestoreService {
   addOrder(order: sendOrderList) {
     return addDoc(collection(this.firestore, 'orders'), order)
   }
+
+  getOrder(): Observable<sendOrderList[]>{
+    return collectionData(collection(this.firestore, 'orders'), {idField: 'id'}) as Observable<sendOrderList[]>
+  }
 }
 
