@@ -1,16 +1,22 @@
+<app-navbar-chef></app-navbar-chef>
 <section class="orderCardsContainer">
-    <mat-card class="orderCard" *ngFor="let order of orders">
-        <mat-card-title>Mesa: {{order.table}}</mat-card-title>
-        <mat-card-content value="{{order.status}}">
-            <p>{{order.time}}---- {{order.status}}</p>
-            <div>
-                <p>{{order.order}}</p>
-                <p>hola</p>
-                <p>hola</p>
+    <mat-card class="orderCard" *ngFor="let item of orders">
+        <mat-card-title>Mesa: {{item.table}}</mat-card-title>
+        <mat-card-content value="{{item.status}}">
+            <div class="containerHeader">
+                <p>{{item.time}}</p>
+                <p>{{item.status}}</p>
             </div>
-            <p>{{order.total}}</p>
+            <div class="containerTitles">
+                <p>Cantidad</p>
+                <p>Productos</p>
+            </div>
+            <div class="contentSummary" *ngFor="let itemAux of item.order">
+                <p>{{itemAux.amount}}</p>
+                <p>{{itemAux.name}}</p>
+            </div>
+            <p>Total: {{item.total}}</p>
         </mat-card-content>
-        <mat-divider inset></mat-divider>
         <mat-card-actions>
             <button mat-button>Actualizar pedido</button>
         </mat-card-actions>
