@@ -1,19 +1,19 @@
 <div>
     <mat-sidenav-container class="lateralMenu">
-            <div class="containerIcon" (click)="filterCategories($event)" data-value="">
+            <div class="containerIcon">
                 <div class="boxIcon">
-                    <fa-icon class="iconLateralMenu" [icon]="faUtensils"></fa-icon>
+                    <fa-icon class="iconLateralMenu" [icon]="faUtensils" (click)="filterEventSend('all')"></fa-icon>
                     <h5>All</h5>
                 </div>
-                <div class="boxIcon" data-value="breakfast">
+                <div class="boxIcon" (click)="filterEventSend('breakfast')">
                     <fa-icon class="iconLateralMenu" [icon]="faCoffee"></fa-icon>
                     <h5>Breakfast</h5>
                 </div>
-                <div class="boxIcon">                    
+                <div class="boxIcon"(click)="filterEventSend('lunch')">                    
                     <fa-icon class="iconLateralMenu" [icon]="faBurger"></fa-icon>
                     <h5>Lunch</h5>
                 </div>
-                <div class="boxIcon">
+                <div class="boxIcon" (click)="filterEventSend('drinks')">
                     <fa-icon class="iconLateralMenu" [icon]="faChampagneGlasses"></fa-icon>
                     <h5>Drinks</h5>
                 </div>

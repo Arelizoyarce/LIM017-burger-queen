@@ -21,13 +21,15 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-import { ChefViewComponent } from './components/chef-view/chef-view.component';
+import { ChefViewComponent } from './components/chef/chef-view/chef-view.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FoodListComponent } from './components/waiter-view/food-list/food-list.component';
 import { OrderListComponent } from './components/waiter-view/order-list/order-list.component';
 import { NavbarLateralComponent } from './components/waiter-view/navbar-lateral/navbar-lateral/navbar-lateral.component';
 import { ViewOrdersComponent } from './components/waiter-view/view-orders/view-orders.component';
+import { NavbarChefComponent } from './components/chef/navbar-chef/navbar-chef.component';
+import { OrdersComponent } from './components/chef/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { ViewOrdersComponent } from './components/waiter-view/view-orders/view-o
     OrderListComponent,
     NavbarLateralComponent,
     ViewOrdersComponent,
+    NavbarChefComponent,
+    OrdersComponent,
   ],
   imports: [
     BrowserModule,

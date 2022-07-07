@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-take-orders',
@@ -7,12 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./take-orders.component.css']
 })
 export class TakeOrdersComponent implements OnInit {
-  constructor(private router: Router) { }
+  //private router: Router
+  constructor() { }
   ngOnInit(): void {
 
   }
 
-  viewOrders(){
-this.router.navigate(['view-orders'])
-  }
+//   viewOrders(){
+// this.router.navigate(['view-orders'])
+//   }
 }
