@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { LogInComponent } from './components/log-in/log-in.component';
@@ -30,6 +31,7 @@ import { NavbarLateralComponent } from './components/waiter-view/navbar-lateral/
 import { ViewOrdersComponent } from './components/waiter-view/view-orders/view-orders.component';
 import { NavbarChefComponent } from './components/chef/navbar-chef/navbar-chef.component';
 import { OrdersComponent } from './components/chef/orders/orders.component';
+import { ModalComponent } from './components/chef/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { OrdersComponent } from './components/chef/orders/orders.component';
     ViewOrdersComponent,
     NavbarChefComponent,
     OrdersComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import { OrdersComponent } from './components/chef/orders/orders.component';
     MatButtonModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDialogModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],

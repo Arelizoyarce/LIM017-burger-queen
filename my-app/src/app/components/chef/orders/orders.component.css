@@ -11,19 +11,37 @@
     flex-direction: row;
     align-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
 }
 .orderCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 20px;
     padding: 20px;
     margin: 20px;
     width: 300px;
-    height: 380px;
-    border-radius: 10px;
+    min-height: 300px;
+    border-radius: 5px;
     background: #FFC0A0;
 }
-
+.block{
+    margin: 15px 0px 15px 0px;
+}
 .orderCard div{
     display: flex;
     flex-direction: row;
+}
+hr{
+    background-color: black;
+    border-top-width: thin;
+    width: 300px;
+    border-color: black;
+}
+.headerCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .containerTitles p{
     width: 190px;
@@ -37,10 +55,8 @@
 }
 
 button{
-    display: flex;
-    align-content: center;
-    justify-content: center;
     width: 300px;
     background: black;
     color: white;
+    font-size: 20px;
 }

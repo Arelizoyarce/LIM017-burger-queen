@@ -6,10 +6,6 @@
     background-color: linear-gradient(179.1deg, #FFC0A0 30.47%, rgba(255, 192, 160, 0) 120.55%);
 }
 
-.lateralMenu{
-    
-}
-
 .containerIcon{
     padding-top:100px;
     padding-left: 12px;
@@ -47,3 +43,15 @@
   align-content: center;
   padding-right:5px;
 }
+
+/*barra animación*/
+.selected:before {
+    content: '';
+    width: 4px;
+    height: 70%;
+    background: #111111;
+    position: absolute;
+    top: 15%;
+    left: -10px;
+}
+  

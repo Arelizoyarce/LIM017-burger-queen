@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import receivedOrderFirestore from 'src/app/interfaces/received-order-firestore';
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-orders',
@@ -9,7 +11,8 @@ import { FirestoreService } from 'src/app/services/services-firestore/firestore.
 })
 export class OrdersComponent implements OnInit {
   orders: receivedOrderFirestore[] = []
-  constructor(private firestore: FirestoreService) { }
+  constructor(private firestore: FirestoreService,
+    public modal: MatDialog) { }
 
   ngOnInit(): void {
     this.firestore.getOrder().subscribe((order) => {
@@ -20,5 +23,13 @@ export class OrdersComponent implements OnInit {
   changeStatusOrder(index: number){
     const statusValue = this.orders[index].status = 'Done'
     this.firestore.updateStatus(this.orders[index].id , statusValue)
+  }
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.modal.open(ModalComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
   }
 }
