@@ -1,17 +1,20 @@
-<div>
+<div class="containerLateralMenu">
     <mat-sidenav-container class="lateralMenu">
             <div class="containerIcon">
                 <div class="boxIcon">
-                    <!-- <fa-icon class="iconLateralMenu" [icon]="faUtensils"></fa-icon> -->
+                    <fa-icon class="iconLateralMenu" [icon]="faUtensils"></fa-icon>
                     <h5>All</h5>
                 </div>
                 <div class="boxIcon">
-                    <!-- <fa-icon class="iconLateralMenu" [icon]="faCoffee"></fa-icon> -->
+                    <fa-icon class="iconLateralMenu" [icon]="faClock"></fa-icon>
                     <h5>Pending</h5>
                 </div>
                 <div class="boxIcon">                    
-                    <!-- <fa-icon class="iconLateralMenu" [icon]="faBurger"></fa-icon> -->
+                    <fa-icon class="iconLateralMenu" [icon]="faCalendarCheck"></fa-icon>
                     <h5>Done</h5>
+                </div>
+                <div class="iconLogOut">
+                    <fa-icon class="iconLateralMenu" id="logOut" [icon]="faRightFromBracket" (click)="logOut()"></fa-icon>
                 </div>
             </div>
     </mat-sidenav-container>
