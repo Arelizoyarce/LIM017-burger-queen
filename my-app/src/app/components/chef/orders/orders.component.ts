@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatButton } from '@angular/material/button';
 import receivedOrderFirestore from 'src/app/interfaces/received-order-firestore';
-import sendOrderList from 'src/app/interfaces/send-order.interface';
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 
 @Component({
@@ -15,12 +13,12 @@ export class OrdersComponent implements OnInit {
 
   ngOnInit(): void {
     this.firestore.getOrder().subscribe((order) => {
-      console.log('soy order:', order)
       this.orders = order
     })
   }
 
-  changeStatusOrder(){
-    
+  changeStatusOrder(index: number){
+    const statusValue = this.orders[index].status = 'Done'
+    this.firestore.updateStatus(this.orders[index].id , statusValue)
   }
 }
