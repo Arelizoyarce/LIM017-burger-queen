@@ -1,6 +1,6 @@
 <div>
     <mat-sidenav-container class="lateralMenu">
-            <div class="containerIcon">
+            <div class="containerIcon" (click)="filterCategories($event)" data-value="">
                 <div class="boxIcon">
                     <fa-icon class="iconLateralMenu" [icon]="faUtensils" (click)="filterEventSend('all')"></fa-icon>
                     <h5>All</h5>

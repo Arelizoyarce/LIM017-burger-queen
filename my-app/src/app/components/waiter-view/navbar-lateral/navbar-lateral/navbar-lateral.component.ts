@@ -15,8 +15,6 @@ export class NavbarLateralComponent implements OnInit {
   faChampagneGlasses = faChampagneGlasses;
   faRightFromBracket = faRightFromBracket;
   @Output() filter =  new EventEmitter<string>()
-
-
   constructor(
     private firebase: FirebaseService,
     private router: Router) { }
