@@ -1,5 +1,8 @@
 .orderSection{
-  margin: auto;
+  width: 385px;
+  border: solid black;
+  border-width: 1px;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .containerData{
@@ -8,22 +11,37 @@
   justify-content: space-between;
 }
 
-.tableContainer {
-border-collapse: collapse;
-width: 27.5em;
-height: 50px;
-margin-top: 20px;
+section {
+  border-bottom: solid black;
+  border-width: 1px;
+  padding: 10px;
+}
+section div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+section input, select{
+background-color: rgba(251, 190, 190, 1);
+width: 347px;
+height: 44px;
+border:none;
+border-radius: 10px 30px;
 }
 
-.tableContainer thead tr{
-border: 1px solid #000000;
+.tableContainer {
+  width: 27.5em;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .tableContainer thead tr td{
 font-size: 15px;
 letter-spacing: 1px;
-color: red;
-padding: 7px;
+color: rgb(4, 4, 4);
+padding: 12px;
+text-align: center;
 }
 
 .tableContainer tbody tr td:nth-child(5){
@@ -36,6 +54,7 @@ padding: 7px;
 
 .tableContainer tbody tr{
   border: 1px solid #000000;
+  background: #bebebe33;
 }
 
 .tableContainer tbody tr td{
@@ -43,9 +62,10 @@ padding: 7px;
   padding: 8px;
 }
 
+.tableContainer tfoot{
+background: rgba(251, 98, 96, 1);
+} 
 .tableContainer tfoot tr{
-  border: 1px solid #000000;
-  background: rgba(251, 98, 96, 1);
   height: 50px;
 } 
 
@@ -54,6 +74,7 @@ padding: 7px;
   letter-spacing: 1px;
   color: #000000;
   padding: 7px;
+  text-align: center;
 }
 
 .tableContainer tfoot tr td:nth-child(2){
@@ -72,14 +93,14 @@ padding: 7px;
 .faCircleMinus{
   filter: invert(12%) sepia(68%) saturate(7324%) hue-rotate(4deg) brightness(107%) contrast(119%);
 }
-.orderBtn{
+button{
   background-color: black;
   color: #fff;
-  border-radius: 5px;
-  font-size: 18px;  
+  border-radius: 10px;
+  font-size: 18px;
   cursor: pointer;
   margin-top: 20px;
   text-align: center;
-  width: 389px;
-  height: 35px;
+  width: 385px;
+  height: 60px;
 }

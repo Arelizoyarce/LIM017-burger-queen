@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { faBurger, faChampagneGlasses, faCoffee, faRightFromBracket, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import { FirebaseService } from 'src/app/services/services-firebase/firebase.service';
-import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 
 @Component({
   selector: 'app-navbar-lateral',
@@ -15,14 +14,18 @@ export class NavbarLateralComponent implements OnInit {
   faBurger = faBurger;
   faChampagneGlasses = faChampagneGlasses;
   faRightFromBracket = faRightFromBracket;
+  @Output() filter =  new EventEmitter<string>()
 
-  constructor(private firestore: FirestoreService,
+
+  constructor(
     private firebase: FirebaseService,
     private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  filterEventSend(type:string){
+    this.filter.emit(type)
+  }
   logOut(){
     this.firebase.logout()
     .then(()=>{

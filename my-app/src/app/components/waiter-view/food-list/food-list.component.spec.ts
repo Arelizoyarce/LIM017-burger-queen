@@ -1,7 +1,9 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { UserCredential } from '@angular/fire/auth';
 // import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 
 // import { FoodListComponent } from './food-list.component';
+
 
 // describe('FoodListComponent', () => {
 //   let component: FoodListComponent;
@@ -10,7 +12,7 @@
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
 //       declarations: [ FoodListComponent ],
-//       providers:[{ provide: FirestoreService}]
+//       providers:[]
 //     })
 //     .compileComponents();
 
