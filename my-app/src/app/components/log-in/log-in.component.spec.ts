@@ -19,8 +19,8 @@ describe('LogInComponent', () => {
     login(): Promise<any> {
       return Promise.resolve({
         user: {
-          email: 'mesera@cicysburger.com',
-          uid: 'dR7eRoYwmYcKHXVvMQm4SoRXSKm2'
+          email: 'cocinera@cicysburger.com',
+          uid: 'dR7eRoYwmYcKHXVvMQm4SoRXSKm'
         },
         operationType: "signIn",
         providerId: null,
@@ -30,8 +30,8 @@ describe('LogInComponent', () => {
 
   class FirestoreServiceMock {
     getUserRole(id: string): Promise<DocumentData> {
-       if( id === 'dR7eRoYwmYcKHXVvMQm4SoRXSKm2' ){
-        return Promise.reject({ role: 'chef' })
+       if( id === 'dR7eRoYwmYcKHXVvMQm4SoRXSKm' ){
+        return Promise.resolve({ role: 'chef' })
        }
       return Promise.resolve({ role: 'waiter' })
     }
