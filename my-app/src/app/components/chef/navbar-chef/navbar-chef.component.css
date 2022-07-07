@@ -1,13 +1,13 @@
 .containerLateralMenu{
     height: 100%;
+    width: 80px;
+    position: fixed;
+    background: #FFC0A0;   
+    background-color: linear-gradient(179.1deg, #FFC0A0 30.47%, rgba(255, 192, 160, 0) 120.55%);
 }
 
 .lateralMenu{
-    background: #FFC0A0;   
-    background-color: linear-gradient(179.1deg, #FFC0A0 30.47%, rgba(255, 192, 160, 0) 120.55%);
-    width: 80px;
-    height: 100%;
-    position: fixed;
+    
 }
 
 .containerIcon{
