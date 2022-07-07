@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatButton } from '@angular/material/button';
+import receivedOrderFirestore from 'src/app/interfaces/received-order-firestore';
 import sendOrderList from 'src/app/interfaces/send-order.interface';
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 
@@ -8,21 +10,17 @@ import { FirestoreService } from 'src/app/services/services-firestore/firestore.
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-  orders: sendOrderList[] = []
+  orders: receivedOrderFirestore[] = []
   constructor(private firestore: FirestoreService) { }
 
   ngOnInit(): void {
     this.firestore.getOrder().subscribe((order) => {
-      console.log('soy order', order)
+      console.log('soy order:', order)
       this.orders = order
     })
   }
 
-  // changeStatusOrder(timepara: number){
-  //   this.orders.map(element =>{
-  //     if(element.time === timepara){
-
-  //     }
-  //   })
-  // }
+  changeStatusOrder(){
+    
+  }
 }
