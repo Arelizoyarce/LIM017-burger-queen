@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/services/services-firebase/firebase.service'
 import { faUtensils, faClock, faCalendarCheck, faRightFromBracket, IconDefinition } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +15,7 @@ export class NavbarChefComponent implements OnInit {
   faRightFromBracket = faRightFromBracket;
 
   selectFilter: string ='All'
-  @Output() filterValue: string;
+  @Output() filter= new EventEmitter<string>()
 
   constructor(
     private firebase: FirebaseService,
@@ -31,13 +31,14 @@ export class NavbarChefComponent implements OnInit {
     })
   }
 
-  selectedFilter(faIcon: IconDefinition){
-    if(faIcon===faUtensils){
-      this.selectFilter= 'All'
-    }else if (faIcon===faClock){
-      this.selectFilter = 'Pending'
-    } else if(faIcon===faCalendarCheck){
-      this.selectFilter = 'Done'
+  selectedFilter(type: string){
+    this.filter.emit(type)
+    if(type==='All'){
+      this.selectFilter= type
+    }else if (type==='Pending'){
+      this.selectFilter = type
+    } else if(type === 'Done'){
+      this.selectFilter = type
     }
   }
 }

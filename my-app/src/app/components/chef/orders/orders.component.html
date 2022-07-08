@@ -1,4 +1,4 @@
-<app-navbar-chef></app-navbar-chef>
+<app-navbar-chef (filter)="filterEvent($event)"></app-navbar-chef>
 <section class="orderCardsContainer">
     <div class="containerAllCards">
         <mat-card class="orderCard" *ngFor="let item of orders; index as index"

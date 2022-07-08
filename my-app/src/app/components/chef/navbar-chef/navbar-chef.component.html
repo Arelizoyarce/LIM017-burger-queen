@@ -1,14 +1,14 @@
 <mat-sidenav-container class="containerLateralMenu">
     <div class="containerIcon">
-        <div class="boxIcon" (click)="selectedFilter(faUtensils)" [ngClass]="{'selected' : selectFilter==='All'}">
+        <div class="boxIcon" (click)="selectedFilter('All')" [ngClass]="{'selected' : selectFilter==='All'}">
             <fa-icon class="iconLateralMenu" [icon]="faUtensils"></fa-icon>
             <h5>All</h5>
         </div>
-        <div class="boxIcon" (click)="selectedFilter(faClock)" [ngClass]="{'selected' : selectFilter==='Pending'}">
+        <div class="boxIcon" (click)="selectedFilter('Pending')" [ngClass]="{'selected' : selectFilter==='Pending'}">
             <fa-icon class="iconLateralMenu" [icon]="faClock"></fa-icon>
             <h5>Pending</h5>
         </div>
-        <div class="boxIcon" (click)="selectedFilter(faCalendarCheck)" [ngClass]="{'selected' : selectFilter==='Done'}">
+        <div class="boxIcon" (click)="selectedFilter('Done')" [ngClass]="{'selected' : selectFilter==='Done'}">
             <fa-icon class="iconLateralMenu" [icon]="faCalendarCheck"></fa-icon>
             <h5>Done</h5>
         </div>

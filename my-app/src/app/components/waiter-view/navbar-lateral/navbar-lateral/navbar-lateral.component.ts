@@ -15,14 +15,15 @@ export class NavbarLateralComponent implements OnInit {
   faChampagneGlasses = faChampagneGlasses;
   faRightFromBracket = faRightFromBracket;
   @Output() filter =  new EventEmitter<string>()
+
+  selectFilter: string = 'all'
   constructor(
     private firebase: FirebaseService,
     private router: Router) { }
 
-    selectFilter: string = 'all'
-
   ngOnInit(): void {
   }
+
   filterEventSend(type:string){
     this.filter.emit(type)
     if(type==='all'){
@@ -35,6 +36,7 @@ export class NavbarLateralComponent implements OnInit {
       this.selectFilter = type
     }
   }
+  
   logOut(){
     this.firebase.logout()
     .then(()=>{
