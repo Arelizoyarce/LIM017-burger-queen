@@ -4,12 +4,11 @@
       <img src="../../../assets/img/burgerLogo.png" />
       <h1>La Burguesa</h1>
     </div>
-    <button id="viewOrders">Ver Pedidos</button>
+    <button routerLink="orders" (click)="changeNavigate()" *ngIf="changeRouter===false">Ver Pedidos</button>
+    <button *ngIf="changeRouter===true" (click)="changeNavigate()">Tomar orden</button>
   </mat-toolbar>
 </div>
-<!-- <section class="containerNavBarLateral">
-    <app-navbar-lateral></app-navbar-lateral>
-</section> -->
+<router-outlet></router-outlet>
 <section class="containerFoodList">
-  <app-food-list></app-food-list>
+  <app-food-list [ngStyle]="{'display':changeRouter === true ?'none':'block'}"></app-food-list>
 </section>

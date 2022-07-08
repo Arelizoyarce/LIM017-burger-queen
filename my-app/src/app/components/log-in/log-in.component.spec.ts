@@ -11,9 +11,6 @@ import { DocumentData } from '@angular/fire/firestore';
 describe('LogInComponent', () => {
   let component: LogInComponent;
   let fixture: ComponentFixture<LogInComponent>;
-  // let serviceFb: FirebaseService
-  // const fakeAuth = {}
-  // serviceFb = new FirebaseService(fakeAuth as Auth)
 
   class FirebaseServiceMock {
     login(email: string): Promise<any> {
@@ -44,6 +41,7 @@ describe('LogInComponent', () => {
       return Promise.resolve({})
     }
   }
+  
   let mockRouter = {
 
     navigate: jasmine.createSpy('navigate').and.callFake(() => {

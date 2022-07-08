@@ -33,7 +33,7 @@
     height: 40px; 
     object-fit:contain;
 }
-#viewOrders{
+button{
     background-color: black;
     color: #fff;
     text-align: center;

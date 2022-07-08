@@ -19,10 +19,21 @@ export class NavbarLateralComponent implements OnInit {
     private firebase: FirebaseService,
     private router: Router) { }
 
+    selectFilter: string = 'all'
+
   ngOnInit(): void {
   }
   filterEventSend(type:string){
     this.filter.emit(type)
+    if(type==='all'){
+      this.selectFilter= type
+    } else if (type==='breakfast'){
+      this.selectFilter= type
+    } else if( type === 'lunch'){
+      this.selectFilter= type
+    } else if( type === 'drinks'){
+      this.selectFilter = type
+    }
   }
   logOut(){
     this.firebase.logout()

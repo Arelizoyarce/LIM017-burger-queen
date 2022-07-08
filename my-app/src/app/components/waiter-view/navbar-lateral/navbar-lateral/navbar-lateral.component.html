@@ -1,25 +1,25 @@
 <div>
     <mat-sidenav-container class="lateralMenu">
-            <div class="containerIcon">
-                <div class="boxIcon">
-                    <fa-icon class="iconLateralMenu" [icon]="faUtensils" (click)="filterEventSend('all')"></fa-icon>
-                    <h5>All</h5>
-                </div>
-                <div class="boxIcon" (click)="filterEventSend('breakfast')">
-                    <fa-icon class="iconLateralMenu" [icon]="faCoffee"></fa-icon>
-                    <h5>Breakfast</h5>
-                </div>
-                <div class="boxIcon"(click)="filterEventSend('lunch')">                    
-                    <fa-icon class="iconLateralMenu" [icon]="faBurger"></fa-icon>
-                    <h5>Lunch</h5>
-                </div>
-                <div class="boxIcon" (click)="filterEventSend('drinks')">
-                    <fa-icon class="iconLateralMenu" [icon]="faChampagneGlasses"></fa-icon>
-                    <h5>Drinks</h5>
-                </div>
-                <div class="iconLogOut">
-                    <fa-icon class="iconLateralMenu" id="logOut" [icon]="faRightFromBracket" (click)="logOut()"></fa-icon>
-                </div>
+        <div class="containerIcon">
+            <div class="boxIcon selected" [ngClass]="{'selected': selectFilter === 'all'}" (click)="filterEventSend('all')">
+                <fa-icon class="iconLateralMenu" [icon]="faUtensils"></fa-icon>
+                <h5>All</h5>
             </div>
+            <div class="boxIcon" [ngClass]="{'selected': selectFilter === 'breakfast'}" (click)="filterEventSend('breakfast')">
+                <fa-icon class="iconLateralMenu" [icon]="faCoffee"></fa-icon>
+                <h5>Breakfast</h5>
+            </div>
+            <div class="boxIcon" [ngClass]="{'selected': selectFilter === 'lunch'}"(click)="filterEventSend('lunch')">
+                <fa-icon class="iconLateralMenu" [icon]="faBurger"></fa-icon>
+                <h5>Lunch</h5>
+            </div>
+            <div class="boxIcon" [ngClass]="{'selected': selectFilter === 'drinks'}"(click)="filterEventSend('drinks')">
+                <fa-icon class="iconLateralMenu" [icon]="faChampagneGlasses"></fa-icon>
+                <h5>Drinks</h5>
+            </div>
+            <div class="iconLogOut">
+                <fa-icon class="iconLateralMenu" id="logOut" [icon]="faRightFromBracket" (click)="logOut()"></fa-icon>
+            </div>
+        </div>
     </mat-sidenav-container>
 </div>

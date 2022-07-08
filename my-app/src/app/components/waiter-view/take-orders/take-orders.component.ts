@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 // import { Router } from '@angular/router';
 
 @Component({
@@ -7,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./take-orders.component.css']
 })
 export class TakeOrdersComponent implements OnInit {
-  //private router: Router
-  constructor() { }
+  constructor(private router: Router) { }
+  changeRouter: boolean = false
   ngOnInit(): void {
 
   }
 
-//   viewOrders(){
-// this.router.navigate(['view-orders'])
-//   }
+  changeNavigate(){
+   this.changeRouter=!this.changeRouter
+   console.log('soy changerouter', this.changeRouter)
+  }
 }
