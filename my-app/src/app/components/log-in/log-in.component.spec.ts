@@ -16,11 +16,17 @@ describe('LogInComponent', () => {
   // serviceFb = new FirebaseService(fakeAuth as Auth)
 
   class FirebaseServiceMock {
-    login(): Promise<any> {
+    login(email: string): Promise<any> {
+      let id = '';
+      if (email === 'mesera@cicysburger.com') {
+        id = 'dR7eRoYwmYcKHXVvMQm4SoRXSKm3'
+      }else if(email === 'cocinera@cicysburger.com'){
+        id = 'dR7eRoYwmYcKHXVvMQm4SoRXSKm'
+      }
       return Promise.resolve({
         user: {
-          email: 'cocinera@cicysburger.com',
-          uid: 'dR7eRoYwmYcKHXVvMQm4SoRXSKm'
+          email: email,
+          uid: id
         },
         operationType: "signIn",
         providerId: null,
@@ -30,14 +36,16 @@ describe('LogInComponent', () => {
 
   class FirestoreServiceMock {
     getUserRole(id: string): Promise<DocumentData> {
-       if( id === 'dR7eRoYwmYcKHXVvMQm4SoRXSKm' ){
+      if (id === 'dR7eRoYwmYcKHXVvMQm4SoRXSKm') {
         return Promise.resolve({ role: 'chef' })
-       }
-      return Promise.resolve({ role: 'waiter' })
+      } else if (id === 'dR7eRoYwmYcKHXVvMQm4SoRXSKm3') {
+        return Promise.resolve({ role: 'waiter' })
+      }
+      return Promise.resolve({})
     }
   }
   let mockRouter = {
-    
+
     navigate: jasmine.createSpy('navigate').and.callFake(() => {
       console.log("EJECUTO este SPY")
     })
@@ -54,7 +62,7 @@ describe('LogInComponent', () => {
       providers: [
         { provide: Router, useValue: mockRouter },
         { provide: FirebaseService, useClass: FirebaseServiceMock },
-        { provide: FirestoreService, useClass: FirestoreServiceMock}
+        { provide: FirestoreService, useClass: FirestoreServiceMock }
       ]
     })
       .compileComponents();
@@ -84,11 +92,26 @@ describe('LogInComponent', () => {
     expect(component.dataUser.invalid).toBeFalse();
   });
 
-  it('Debe navegar a xyz', fakeAsync(() => {
+  it('Debe navegar a waiter view', fakeAsync(() => {
     console.log("Esta cosa", component.dataUser)
     const email = component.dataUser.controls['email']
     const password = component.dataUser.controls['password']
     email.setValue('mesera@cicysburger.com');
+    password.setValue('laboratoria');
+
+    const btn = fixture.debugElement.query(By.css('.btnSubmit'))
+    setTimeout(() => {
+      btn.nativeElement.click()
+    }, 50);
+    tick(100);
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/take-orders']);
+  }));
+
+  it('Debe navegar a chef view', fakeAsync(() => {
+    console.log("Esta cosa", component.dataUser)
+    const email = component.dataUser.controls['email']
+    const password = component.dataUser.controls['password']
+    email.setValue('cocinera@cicysburger.com');
     password.setValue('laboratoria');
 
     const btn = fixture.debugElement.query(By.css('.btnSubmit'))
