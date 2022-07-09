@@ -28,10 +28,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FoodListComponent } from './components/waiter-view/food-list/food-list.component';
 import { OrderListComponent } from './components/waiter-view/order-list/order-list.component';
 import { NavbarLateralComponent } from './components/waiter-view/navbar-lateral/navbar-lateral/navbar-lateral.component';
-import { ViewOrdersComponent } from './components/waiter-view/view-orders/view-orders.component';
 import { NavbarChefComponent } from './components/chef/navbar-chef/navbar-chef.component';
 import { OrdersComponent } from './components/chef/orders/orders.component';
 import { ModalComponent } from './components/chef/modal/modal.component';
+import { CdTimerModule } from 'angular-cd-timer';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,6 @@ import { ModalComponent } from './components/chef/modal/modal.component';
     FoodListComponent,
     OrderListComponent,
     NavbarLateralComponent,
-    ViewOrdersComponent,
     NavbarChefComponent,
     OrdersComponent,
     ModalComponent,
@@ -66,7 +65,8 @@ import { ModalComponent } from './components/chef/modal/modal.component';
     MatSnackBarModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatDialogModule
+    MatDialogModule,
+    CdTimerModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],

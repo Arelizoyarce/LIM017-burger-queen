@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import receivedOrderFirestore from 'src/app/interfaces/received-order-firestore';
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
+import { TimeInterface } from 'angular-cd-timer';
 import { ModalComponent } from '../modal/modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-orders',
@@ -10,10 +12,13 @@ import { ModalComponent } from '../modal/modal.component';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
+  
   allProducts: any[]=[]
   orders: receivedOrderFirestore[] = []
+  timerForEachOrder: Array<number> = Array(10);
   constructor(private firestore: FirestoreService,
-    public modal: MatDialog) { }
+    public modal: MatDialog,
+  public router: Router) { }
 
   ngOnInit(): void {
     this.firestore.getOrder().subscribe((order) => {
@@ -48,5 +53,10 @@ export class OrdersComponent implements OnInit {
       enterAnimationDuration,
       exitAnimationDuration,
     });
+  }
+
+  updateTimer(component: any, index: number){
+    this.timerForEachOrder[index] = component.hours*3600 + component.minutes*60 + component.seconds;
+    console.log( this.timerForEachOrder[index], 'funciono')
   }
 }

@@ -5,7 +5,7 @@ export default interface receivedOrderFirestore {
     waiter: string,
     table: string,
     order: orderProduct[],
-    time: string,
+    time: number,
     status: string,
     total: number
 }
