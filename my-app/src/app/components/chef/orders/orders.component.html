@@ -11,7 +11,8 @@
             <hr>
             <mat-card-content value="{{item.status}}" class="block Two">
                 <div class="containerHeader">
-                    <button *ngIf="router.url === '/take-orders/orders' && item.status === 'Pending'" (click)="deleteOrder(item.id)">Eliminar</button>
+                    <button *ngIf="router.url === '/take-orders/orders' && item.status === 'Pending'"
+                        (click)="deleteOrder(item.id)">Eliminar</button>
                     <p>{{item.time}}</p>
                     <cd-timer format="hms" [startTime]="0" *ngIf="item.status==='Pending'"></cd-timer>
                 </div>
@@ -26,8 +27,9 @@
                 <p>Total: ${{item.total}}</p>
             </mat-card-content>
             <mat-card-actions class="block Three">
-                <button mat-button *ngIf="router.url === '/chef-view'" [ngStyle]="{'display': item.status === 'Done'? 'none':'block'}"
-                    (click)="changeStatusOrder(index)" (click)="openDialog('0ms', '0ms')">Actualizar pedido</button>
+                <button mat-button *ngIf="router.url === '/chef-view'"
+                    [ngStyle]="{'display': item.status === 'Done'? 'none':'block'}" (click)="changeStatusOrder(index)"
+                    (click)="openDialog('0ms', '0ms')">Actualizar pedido</button>
             </mat-card-actions>
         </mat-card>
     </div>
