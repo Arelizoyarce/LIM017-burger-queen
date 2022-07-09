@@ -11,6 +11,7 @@
             <hr>
             <mat-card-content value="{{item.status}}" class="block Two">
                 <div class="containerHeader">
+                    <button *ngIf="router.url === '/take-orders/orders' && item.status === 'Pending'" (click)="deleteOrder(item.id)">Eliminar</button>
                     <p>{{item.time}}</p>
                     <cd-timer format="hms" [startTime]="0" *ngIf="item.status==='Pending'"></cd-timer>
                 </div>

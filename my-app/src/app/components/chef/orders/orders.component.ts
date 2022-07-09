@@ -55,8 +55,12 @@ export class OrdersComponent implements OnInit {
     });
   }
 
-  updateTimer(component: any, index: number){
-    this.timerForEachOrder[index] = component.hours*3600 + component.minutes*60 + component.seconds;
-    console.log( this.timerForEachOrder[index], 'funciono')
+  // updateTimer(component: any, index: number){
+  //   this.timerForEachOrder[index] = component.hours*3600 + component.minutes*60 + component.seconds;
+  //   console.log( this.timerForEachOrder[index], 'funciono')
+  // }
+
+  deleteOrder(id: string){
+    this.firestore.deleteOrder(id)
   }
 }

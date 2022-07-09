@@ -30,8 +30,8 @@ export class FirestoreService {
     return collectionData(collection(this.firestore, 'orders'), {idField: 'id'}) as Observable<sendOrderList[]>
   }
 
-  deleteOrder(order:receivedOrderFirestore){
-  const orderDocRef= doc(this.firestore, `orders/${order.id}`);
+  deleteOrder(id: string){
+  const orderDocRef= doc(this.firestore, 'orders', id);
   return deleteDoc(orderDocRef);
   }
 
