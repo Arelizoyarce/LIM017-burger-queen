@@ -8,14 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./take-orders.component.css']
 })
 export class TakeOrdersComponent implements OnInit {
-  constructor(private router: Router) { }
-  changeRouter: boolean = false
+  constructor(public router: Router) { }
   ngOnInit(): void {
 
-  }
-
-  changeNavigate(){
-   this.changeRouter=!this.changeRouter
-   console.log('soy changerouter', this.changeRouter)
   }
 }
