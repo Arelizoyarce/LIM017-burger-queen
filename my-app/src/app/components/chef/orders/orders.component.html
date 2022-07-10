@@ -5,16 +5,20 @@
             [ngStyle]="{'background-color': item.status === 'Done'?'#A0FFBB':'#FFC0A0'}">
             <mat-card-header class="headerCard block One">
                 <mat-card-title>Mesa: {{item.table}}</mat-card-title>
-                <mat-card-subtitle>{{item.status}}</mat-card-subtitle>
-
+                <div>
+                    <mat-card-subtitle>{{item.status}}</mat-card-subtitle>
+                    <fa-icon *ngIf="router.url === '/take-orders/orders' && item.status === 'Pending'"
+                        (click)="deleteOrder(item.id)" [icon]="faTrash" class="iconTrash">
+                    </fa-icon>
+                </div>
             </mat-card-header>
             <hr>
             <mat-card-content value="{{item.status}}" class="block Two">
+                <p>Cliente: {{item.client}}</p>
+                <hr>
                 <div class="containerHeader">
-                    <button *ngIf="router.url === '/take-orders/orders' && item.status === 'Pending'"
-                        (click)="deleteOrder(item.id)">Eliminar</button>
                     <p>{{item.time}}</p>
-                    <cd-timer format="hms" [startTime]="0" *ngIf="item.status==='Pending'"></cd-timer>
+                    <cd-timer format="hms" #basicTimer [startTime]="timerForEachOrder[index]" (onTick)="updateTimer(basicTimer, index)" *ngIf="item.status==='Pending'" ></cd-timer>
                 </div>
                 <div class="containerTitles">
                     <p>Cantidad</p>
@@ -24,11 +28,12 @@
                     <p>{{itemAux.amount}}</p>
                     <p>{{itemAux.name}}</p>
                 </div>
+                <hr>
                 <p>Total: ${{item.total}}</p>
             </mat-card-content>
             <mat-card-actions class="block Three">
-                <button mat-button *ngIf="router.url === '/chef-view'"
-                    [ngStyle]="{'display': item.status === 'Done'? 'none':'block'}" (click)="changeStatusOrder(index)"
+                <button mat-button *ngIf="router.url === '/chef-view' && item.status==='Pending'"
+                     (click)="changeStatusOrder(index)"
                     (click)="openDialog('0ms', '0ms')">Actualizar pedido</button>
             </mat-card-actions>
         </mat-card>

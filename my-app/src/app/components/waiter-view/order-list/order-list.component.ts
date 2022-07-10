@@ -15,10 +15,11 @@ export class OrderListComponent implements OnChanges {
   faCirclePlus = faCirclePlus;
   faCircleMinus = faCircleMinus;
   finalOrder: sendOrderList;
-  nameWaiter = new FormControl('', []);
+  nameClient = new FormControl('', []);
   table = new FormControl('', []);
   time: string= new Date().toLocaleTimeString()
   total: number = 0;
+  timer: number=0;
 
   @Input() orderListProduct: orderProduct[]
   constructor(private firestore: FirestoreService) { }
@@ -66,16 +67,17 @@ export class OrderListComponent implements OnChanges {
 
   sendOrder() {
     this.finalOrder = {
-      waiter: this.nameWaiter.value,
+      client : this.nameClient.value,
       table: this.table.value,
       order: this.orderListProduct,
       time: this.time,
       status: 'Pending',
       total: this.total,
+      timer: this.timer
     }
     this.firestore.addOrder(this.finalOrder)
     this.orderListProduct =[]
-    this.nameWaiter.reset();
+    this.nameClient.reset();
     this.table.reset();
   }
 }
