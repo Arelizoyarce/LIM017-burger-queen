@@ -39,7 +39,8 @@ export class LogInComponent implements OnInit {
               this.newRoute.navigate(['/chef-view']);
             }
           })
-      }).catch(() => {
+      }).catch((err) => {
+        console.log('ESTOY EN EL CATCH' , err)
         this.errRol();
       })
 

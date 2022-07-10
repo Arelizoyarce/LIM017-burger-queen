@@ -45,7 +45,6 @@ export class FoodListComponent implements OnInit {
     const index = this.indexProduct++;
     this.dishesOrder = { name, price, amount, index }
     this.summary.push(this.dishesOrder)
-    console.log('SOY EL SUMARIO', this.summary)
   }
 }
 

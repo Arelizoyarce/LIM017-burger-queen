@@ -1,27 +1,38 @@
-// import { ComponentFixture, TestBed } from '@angular/core/testing';
-// import { UserCredential } from '@angular/fire/auth';
-// import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DocumentData } from '@angular/fire/firestore';
+import { object } from 'rxfire/database';
+import { Observable } from 'rxjs';
+import Product from 'src/app/interfaces/product.interface';
+import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 
-// import { FoodListComponent } from './food-list.component';
+import { FoodListComponent } from './food-list.component';
 
 
-// describe('FoodListComponent', () => {
-//   let component: FoodListComponent;
-//   let fixture: ComponentFixture<FoodListComponent>;
+describe('FoodListComponent', () => {
+    let component: FoodListComponent;
+    let fixture: ComponentFixture<FoodListComponent>;
 
-//   beforeEach(async () => {
-//     await TestBed.configureTestingModule({
-//       declarations: [ FoodListComponent ],
-//       providers:[]
-//     })
-//     .compileComponents();
+    class FirestoreServiceMock {
+        getDataProducts(){
+            return Observable<any>
+        }
+    }
 
-//     fixture = TestBed.createComponent(FoodListComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [FoodListComponent],
+            providers: [{
+                provide: FirestoreService, useClass: FirestoreServiceMock
+            }]
+        })
+            .compileComponents();
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+        fixture = TestBed.createComponent(FoodListComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
+});

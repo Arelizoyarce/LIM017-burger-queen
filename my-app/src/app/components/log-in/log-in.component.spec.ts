@@ -15,10 +15,12 @@ describe('LogInComponent', () => {
   class FirebaseServiceMock {
     login(email: string): Promise<any> {
       let id = '';
-      if (email === 'mesera@cicysburger.com') {
+      if (email === 'mesera@laburguesa.com') {
         id = 'dR7eRoYwmYcKHXVvMQm4SoRXSKm3'
-      }else if(email === 'cocinera@cicysburger.com'){
+      }else if(email === 'cocinera@laburguesa.com'){
         id = 'dR7eRoYwmYcKHXVvMQm4SoRXSKm'
+      } else {
+        return Promise.reject({err: 'mesaje de error'})
       }
       return Promise.resolve({
         user: {
@@ -27,7 +29,7 @@ describe('LogInComponent', () => {
         },
         operationType: "signIn",
         providerId: null,
-      })
+      });
     }
   }
 
@@ -78,14 +80,14 @@ describe('LogInComponent', () => {
   //Validación de formulario
   it('Debe retornar formulario invalido si algún campo está vacío', () => {
     const email = component.dataUser.controls['email']
-    email.setValue('mesera@cicysburger.com');
+    email.setValue('mesera@laburguesa.com');
     expect(component.dataUser.invalid).toBeTrue();
   });
 
   it('Debe retornar formulario valido todo está relleno', () => {
     const email = component.dataUser.controls['email']
     const password = component.dataUser.controls['password']
-    email.setValue('mesera@cicysburger.com');
+    email.setValue('mesera@laburguesa.com');
     password.setValue('laboratoria');
     expect(component.dataUser.invalid).toBeFalse();
   });
@@ -94,7 +96,7 @@ describe('LogInComponent', () => {
     console.log("Esta cosa", component.dataUser)
     const email = component.dataUser.controls['email']
     const password = component.dataUser.controls['password']
-    email.setValue('mesera@cicysburger.com');
+    email.setValue('mesera@laburguesa.com');
     password.setValue('laboratoria');
 
     const btn = fixture.debugElement.query(By.css('.btnSubmit'))
@@ -109,7 +111,7 @@ describe('LogInComponent', () => {
     console.log("Esta cosa", component.dataUser)
     const email = component.dataUser.controls['email']
     const password = component.dataUser.controls['password']
-    email.setValue('cocinera@cicysburger.com');
+    email.setValue('cocinera@laburguesa.com');
     password.setValue('laboratoria');
 
     const btn = fixture.debugElement.query(By.css('.btnSubmit'))
@@ -118,5 +120,22 @@ describe('LogInComponent', () => {
     }, 50);
     tick(100);
     expect(mockRouter.navigate).toHaveBeenCalledWith(['/chef-view']);
+  }));
+
+  it('Debe mostrar error si falla logIn', fakeAsync(() => {
+    const email = component.dataUser.controls['email']
+    const password = component.dataUser.controls['password']
+    email.setValue('cocinera@lburguesa.com');
+    password.setValue('laboratoria');
+
+    const btn = fixture.debugElement.query(By.css('.btnSubmit'))
+    // btn.nativeElement.click()
+    // expect(login(email)).toEqual({err :'mesaje de error'})
+    setTimeout(() => {
+      btn.nativeElement.click()
+    }, 50);
+    tick(100);
+    //ya cae en el catch al ejecutar ng test pero no llama al expect
+    // expect(component.sumit()).toBe(Promise.reject({}))
   }));
 });
