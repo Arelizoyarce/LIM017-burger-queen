@@ -1,4 +1,4 @@
-# Burger Queen
+<!-- # Burger Queen
 
 ## Índice
 
@@ -810,4 +810,233 @@ yarn start
 * [Qué es eso de serverless? - @PamRucinque en Medium](https://medium.com/@PamRucinque/qu%C3%A9-es-eso-de-serverless-f4f6c8949b87)
 * [Qué es Serverless? | FooBar - YouTube](https://www.youtube.com/watch?v=_SYHUpLi-2U)
 * [Firebase](https://firebase.google.com/)
-* [Serverless Architectures - Martin Fowler](https://www.martinfowler.com/articles/serverless.html)
+* [Serverless Architectures - Martin Fowler](https://www.martinfowler.com/articles/serverless.html) -->
+
+## Índice
+
+* [1. Sobre el proyecto](#1-sobre-el-proyecto)
+* [2. Historias de Usuario](#2-historias-de-usuario)
+* [3. Prototipos](#3-prototipos)
+* [4. Tecnologías y Herramientas](#4-tecnologías-y-herramientas)
+* [5. Objetivos de Aprendizaje](#5-objetivos-de-aprendizaje)
+* [6. Despliegue](#6-despliegue)
+* [7. Autoras](#7-autoras)
+
+## 1. Sobre el proyecto
+La Burguesa es una interfaz diseñada para la gestión de pedidos de un restaurante, con vistas orientadas para los siguientes roles: mesero y chef. Inicia con una vista para el ingreso a la plataforma, la cual se redirecciona a una segunda vista según el respectivo rol ingresado. En el caso de nuestra plataforma se usaron los siguientes correos:
+
+- mesera@laburguesa.com
+- cocinera@laburguesa.com
+
+Ambos con la contraseña: laboratoria
+
+Para el caso del mesero, una vez que se encuentra en su vista correspondiente; puede ir eligiendo qué productos agregar y/o eliminar, asimismo la interfaz muestra el resumen del pedido con el costo total de la orden y de cada producto según la cantidad. Y para el caso del cocinero, una vez que se encuentra en su vista correspondiente; puede visualizar todas las órdenes que el mesero le ha proporcionado con el fin de atenderlas.
+
+La aplicación es una Single Page Application, pudiéndose usar como una PWA y de manera offline.
+
+## 2. Historias de Usuario
+
+#### HU 01: Yo **como** trabajadorx **quiero** acceder a la interfaz del usuario con mi email y password **para** que me redirija a la página que me corresponda segun mi cargo.
+
+>Criterios de aceptación
+
+Lo que debe ocurrir para que se satisfagan las necesidades del usuario
+
+* Validar email y contraseña y redirigir a la página de tomar orden o ver pedido según el cargo mesero o chef.
+* Que se vea y funcione bien en una Tablet.
+
+>Definición de terminado
+
+Lo acordado que debe ocurrir para decir que la historia está terminada.
+
+* Debes haber recibido code review de al menos una compañera.
+* Testear funciones y/ componentes.
+* Despliegue de aplicación y etiquetado de versión (git tag).
+
+***
+
+#### HU 02: Yo **como** meserx **quiero** tomar el pedido de un cliente **para** no depender de mi mala memoria, **para** saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden.
+
+>Criterios de aceptación
+
+Lo que debe ocurrir para que se satisfagan las necesidades del usuario
+
+* Mostrar la data de productos en la pantalla de forma ordenada.
+* Agregar productos al pedido.
+* Agregar, disminuir, eliminar producto (CRUD) y observar resumen del pedido y monto a pagar.
+* Enviar pedido a cocina (guardar en alguna base de datos) y actualizar la pestaña de ver pedidos todos, pendientes y listos del mesero.
+* Que el mesero pueda acceder a la pestaña de ver pedidos, navegar entre las opciones de todos, pendientes, listos y eliminar los perdidos (solo pendientes).
+* Que se vea y funcione bien en una Tablet.
+
+>Definición de terminado
+
+Lo acordado que debe ocurrir para decir que la historia está terminada.
+
+* Debes haber recibido code review de al menos una compañera.
+* Testar componentes y funciones realizadas.
+* Despliegue de aplicación y etiquetado de versión (git tag).
+
+***
+
+#### HU 03: Yo **como** jefx de cocina **quiero** ver los pedidos de los clientes en orden **para** marcar cuáles están listos para saber qué se debe cocinar y avisar a lxs meserxs que un pedido está listo para servirlo a un cliente.
+
+>Criterios de aceptación
+
+Lo que debe ocurrir para que se satisfagan las necesidades del usuario
+
+* Pintar los pedidos en la vista del cocinero
+* El cocinero debe ver el timer desde que se envía el pedido hasta que se actualiza a listo.
+* La navBar del chef debe filtrar y jalar actualizaciones de pedidos según su status.
+* Los pedidos de la sección done tienen que tener el color verde.
+* Que el botón de 'actulizar pedido' cambie el status del pedido y lo envie a la sección de 'done'.
+* Que se vea y funcione bien en una Tablet.
+
+>Definición de terminado
+
+Lo acordado que debe ocurrir para decir que la historia está terminada.
+
+* Debes haber recibido code review de al menos una compañera.
+* Testar componentes y funciones realizadas.
+* Despliegue de aplicación y etiquetado de versión (git tag).
+
+***
+
+## 3. Prototipos
+Se trabajó con un editor de gráficos vectorial y una herramienta de generación de prototipos ([Figma](http://www.figma.com/?fuid= "Figma")) para tener un diseño más profesional y reflejar lo que la interfaz debería mostrar.
+
+#### **Tablet Vista Horizontal**
+  ##### **Mesero**
+![loginMeseroHorizontal](https://user-images.githubusercontent.com/98605059/178320720-15a49a2d-4434-48eb-8c88-d4db7d14f885.png)
+![meseroOrdenesHorizontal](https://user-images.githubusercontent.com/98605059/178320863-cbfb522f-a9c3-4a2a-818a-97396f8bfccc.png)
+  
+  ##### **Cocinero**
+![cocineroHorizontal](https://user-images.githubusercontent.com/98605059/178320929-9dedc5a5-9a6b-4b4e-893e-5f50ea13f6ef.png)
+
+#### **Tablet Vista Vertical**
+  ##### **Mesero**
+![loginMeseroVertical](https://user-images.githubusercontent.com/98605059/178321033-17dcf5ac-44cf-4acb-bb74-61ced0ab8460.png)  
+![meseroOrdenesVertical](https://user-images.githubusercontent.com/98605059/178321104-c881aa28-cf95-4d3f-bf92-4f34e08261c5.png)
+  
+  ##### **Cocinero**
+![cocineroVertical](https://user-images.githubusercontent.com/98605059/178320599-9298cbd5-e7ac-498a-b14e-9f7864684f88.png)
+
+## 4. Tecnologías y Herramientas
+![GitHub](https://img.shields.io/badge/-GitHub-181717?style=plastic&logo=github)
+![Angular](https://img.shields.io/badge/-Angular-8B0000?style=plastic&logo=angular)
+![Typescript](https://img.shields.io/badge/-Typescript-000080?style=plastic&logo=typescript)
+![Firebase](https://img.shields.io/badge/-Firebase-181717?style=plastic&logo=firebase)
+![Figma](https://img.shields.io/badge/-Figma-634DFF?style=plastic&logo=figma)
+![Karma](https://img.shields.io/badge/-Karma-5DC19?style=plastic&logo=karma)
+![Jasmine](https://img.shields.io/badge/-Jasmine-4C2882?style=plastic&logo=jasmine)
+
+## 5. Objetivos de Aprendizaje
+#### Uso de HTML semántico
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+      <title>Hello world!</title>
+  </head>
+  <body>
+	<main>
+	  <header>
+	    <h1>Hello world!</h1>
+	  </header>
+  </main>
+	<footer></footer>
+	<script></script>
+  </body>
+</html>
+```
+#### Selectores, modelo de caja, flexbox, Grid y Media Queries en CCS
+
+[CSS Selectors-MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors "CSS Selectors-MDN")
+
+[Box Model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model "Box Model")
+
+[Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox "Flexbox")
+
+[Grids](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
+
+[Media queries](https://developer.mozilla.org/es/docs/CSS/Media_queries)
+
+[Responsive Design](https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Responsive_Design "Responsive Design")
+
+#### Javascript
+
+[Métodos de Array-MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array "Métodos de Array")
+
+[Objetos](https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/Basics)
+
+[EventTarget.addEventListener()-MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener "Evento AddEventListener-MDN")
+
+[Condicionales-MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals "Condicionales-MDN")
+
+[Funciones(Parámetros y argumentos)-MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions "Funciones(Parámetros y argumentos)-MDN")
+
+#### Angular
+
+[Angular Componentes](https://angular.io/guide/component-overview)
+
+[Introducción a componentes y plantillas](https://angular.io/guide/architecture-components#introduction-to-components)
+
+[Directivas estructurales](https://angular.io/guide/structural-directives)
+
+[Input & Output](https://angular.io/guide/component-interaction#component-interaction)
+
+[Creación y uso de servicios](https://angular.io/guide/architecture-services#providing-services)
+
+[Manejo de rutas](https://angular.io/guide/router)
+
+[Creación y uso de observables](https://angular.io/guide/observables-in-angular)
+
+[Uso de HttpClient](https://angular.io/guide/http)
+
+[Estilos de componentes](https://angular.io/guide/template-syntax#built-in-directives)
+
+#### Es Modules y Test
+
+[ECMAScript (ES Modules-Import)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import "ECMAScript (ES Modules-Import)")
+
+[ECMAScript (ES Modules-Export)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/export "ECMAScript (ES Modules-Export)")
+
+[Karma](https://angular.io/guide/testing)
+
+[Jasmine](https://www.digitalocean.com/community/tutorials/testing-angular-with-jasmine-and-karma-part-1)
+
+#### CallBack y Promesas
+
+[Función CallBack](https://developer.mozilla.org/es/docs/Glossary/Callback_function "CallBack")
+
+[Promise](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise "Promesas")
+
+[Cómo escribir una promesa de JavaScript](https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/ "Promesas")
+
+#### Firebase
+
+[Documentación oficial Firebase](https://firebase.google.com/docs/firestore?hl=es "Firebase")
+
+[Reglas de seguridad Firebase](https://firebase.google.com/docs/rules?hl=es "Firebase")
+
+[Primeros pasos con Firebase-Autenticación](https://firebase.google.com/docs/auth/web/start?hl=es "Firebase")
+
+[Administra usuarios en Firebase](https://firebase.google.com/docs/auth/web/manage-users?hl=es#get_the_currently_signed-in_user "Firebase")
+
+[Agregar datos a Cloud Firebase](https://firebase.google.com/docs/firestore/manage-data/add-data "Firebase")
+
+[Obtén actualizaciones en tiempo real-Firebase](https://firebase.google.com/docs/firestore/query-data/listen?hl=es "Firebase")
+
+#### Control de versiones(Git y GitHub)
+
+[Página Oficial GitHub](https://pages.github.com/ "Página Oficial GitHub")
+
+[Ramas en GitHub](https://www.atlassian.com/es/git/tutorials/using-branches)
+
+[GitHub Project](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects)
+## 6. Despliegue
+
+## 7. Autoras
+- [Areliz Oyarce](https://github.com/Arelizoyarce)
+- [Cinthia Velásquez](https://github.com/CinthiaVB)
