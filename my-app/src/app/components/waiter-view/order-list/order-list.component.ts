@@ -1,9 +1,10 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { faCircleMinus, faCirclePlus, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import orderProduct from 'src/app/interfaces/order-product.interface';
 import sendOrderList from 'src/app/interfaces/send-order.interface';
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
+import { OrdersComponent } from '../../chef/orders/orders.component';
 
 @Component({
   selector: 'app-order-list',
@@ -22,6 +23,8 @@ export class OrderListComponent implements OnChanges {
   timer: number=0;
 
   @Input() orderListProduct: orderProduct[]
+
+  @ViewChild(OrdersComponent) timerOrder: OrdersComponent;
   constructor(private firestore: FirestoreService) { }
   
   

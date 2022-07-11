@@ -18,7 +18,8 @@
                 <hr>
                 <div class="containerHeader">
                     <p>{{item.time}}</p>
-                    <cd-timer format="hms" #basicTimer [startTime]="timerForEachOrder[index]" (onTick)="updateTimer(basicTimer, index)" *ngIf="item.status==='Pending'" ></cd-timer>
+                    <p></p>
+                    <!-- <cd-timer format="hms" #basicTimer [startTime]="timerForEachOrder[index]" (onTick)="updateTimer(basicTimer, index)" *ngIf="item.status==='Pending'" ></cd-timer> -->
                 </div>
                 <div class="containerTitles">
                     <p>Cantidad</p>
@@ -36,6 +37,7 @@
                      (click)="changeStatusOrder(index)"
                     (click)="openDialog('0ms', '0ms')">Actualizar pedido</button>
             </mat-card-actions>
+            <p>{{timeMinute}}:{{timeLeft}}</p>
         </mat-card>
     </div>
 </section>

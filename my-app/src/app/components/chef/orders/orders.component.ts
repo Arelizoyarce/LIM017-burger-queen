@@ -3,7 +3,6 @@ import receivedOrderFirestore from 'src/app/interfaces/received-order-firestore'
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 import {MatDialog} from '@angular/material/dialog';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { TimeInterface } from 'angular-cd-timer';
 import { ModalComponent } from '../modal/modal.component';
 import { Router } from '@angular/router';
 
@@ -13,18 +12,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-  @ViewChild('basicTimer') timer!: TimeInterface;
   faTrash = faTrash
   allProducts: any[]=[]
   orders: receivedOrderFirestore[] = []
-  timerForEachOrder: Array<number> = Array(10);
+ 
   constructor(private firestore: FirestoreService,
     public modal: MatDialog,
   public router: Router) { }
 
   ngOnInit(): void {
     this.firestore.getOrder().subscribe((order) => {
-      this.timerForEachOrder.length = order.length;
       this.allProducts= order
       this.orders = this.allProducts
     })
@@ -58,11 +55,30 @@ export class OrdersComponent implements OnInit {
     });
   }
 
-  updateTimer(component: any, index: number){
-    this.timerForEachOrder[index] = component.hours*3600 + component.minutes*60 + component.seconds;
-  }
-
   deleteOrder(id: string){
     this.firestore.deleteOrder(id)
   }
+
+  timeLeft: number;
+  timeMinute: number
+interval
+
+  startTimer() {
+    console.log('estoy siendo ejecutado')
+    return this.interval = setInterval(()=> {
+     if(this.timeLeft < 0) {
+       this.timeLeft--;
+     } else {
+       this.timeLeft += 1;
+       if(this.timeLeft === 60){
+         this.timeMinute += 1
+         this.timeLeft = 0
+       }
+     }
+   },1000)
+ }
+
+ pauseTimer() {
+   clearInterval(this.interval);
+ }
 }
