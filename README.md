@@ -832,12 +832,74 @@ Ambos con la contraseña: laboratoria
 
 Para el caso del mesero, una vez que se encuentra en su vista correspondiente; puede ir eligiendo qué productos agregar y/o eliminar, asimismo la interfaz muestra el resumen del pedido con el costo total de la orden y de cada producto según la cantidad. Y para el caso del cocinero, una vez que se encuentra en su vista correspondiente; puede visualizar todas las órdenes que el mesero le ha proporcionado con el fin de atenderlas.
 
-La aplicación es una Single Page Aplication, pudiéndose usar como una PWA y de manera offline.
+La aplicación es una Single Page Application, pudiéndose usar como una PWA y de manera offline.
 
 ## 2. Historias de Usuario
-HU1: Yo como trabajadorx quiero acceder a la interfaz del usuario con mi email y password y que me redirija a la página que me corresponda segun mi cargo.
-HU2: Yo como meserx quiero tomar el pedido de un cliente para no depender de mi mala memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden.
-H3:Yo como jefx de cocina quiero ver los pedidos de los clientes en orden y marcar cuáles están listos para saber qué se debe cocinar y avisar a lxs meserxs que un pedido está listo para servirlo a un cliente.
+
+#### HU 01: Yo **como** trabajadorx **quiero** acceder a la interfaz del usuario con mi email y password **para** que me redirija a la página que me corresponda segun mi cargo.
+
+>Criterios de aceptación
+
+Lo que debe ocurrir para que se satisfagan las necesidades del usuario
+
+* Validar email y contraseña y redirigir a la página de tomar orden o ver pedido según el cargo mesero o chef.
+* Que se vea y funcione bien en una Tablet.
+
+>Definición de terminado
+
+Lo acordado que debe ocurrir para decir que la historia está terminada.
+
+* Debes haber recibido code review de al menos una compañera.
+* Testear funciones y/ componentes.
+* Despliegue de aplicación y etiquetado de versión (git tag).
+
+***
+
+#### HU 02: Yo **como** meserx **quiero** tomar el pedido de un cliente **para** no depender de mi mala memoria, **para** saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden.
+
+>Criterios de aceptación
+
+Lo que debe ocurrir para que se satisfagan las necesidades del usuario
+
+* Mostrar la data de productos en la pantalla de forma ordenada.
+* Agregar productos al pedido.
+* Agregar, disminuir, eliminar producto (CRUD) y observar resumen del pedido y monto a pagar.
+* Enviar pedido a cocina (guardar en alguna base de datos) y actualizar la pestaña de ver pedidos todos, pendientes y listos del mesero.
+* Que el mesero pueda acceder a la pestaña de ver pedidos, navegar entre las opciones de todos, pendientes, listos y eliminar los perdidos (solo pendientes).
+* Que se vea y funcione bien en una Tablet.
+
+>Definición de terminado
+
+Lo acordado que debe ocurrir para decir que la historia está terminada.
+
+* Debes haber recibido code review de al menos una compañera.
+* Testar componentes y funciones realizadas.
+* Despliegue de aplicación y etiquetado de versión (git tag).
+
+***
+
+#### HU 03: Yo **como** jefx de cocina **quiero** ver los pedidos de los clientes en orden **para** marcar cuáles están listos para saber qué se debe cocinar y avisar a lxs meserxs que un pedido está listo para servirlo a un cliente.
+
+>Criterios de aceptación
+
+Lo que debe ocurrir para que se satisfagan las necesidades del usuario
+
+* Pintar los pedidos en la vista del cocinero
+* El cocinero debe ver el timer desde que se envía el pedido hasta que se actualiza a listo.
+* La navBar del chef debe filtrar y jalar actualizaciones de pedidos según su status.
+* Los pedidos de la sección done tienen que tener el color verde.
+* Que el botón de 'actulizar pedido' cambie el status del pedido y lo envie a la sección de 'done'.
+* Que se vea y funcione bien en una Tablet.
+
+>Definición de terminado
+
+Lo acordado que debe ocurrir para decir que la historia está terminada.
+
+* Debes haber recibido code review de al menos una compañera.
+* Testar componentes y funciones realizadas.
+* Despliegue de aplicación y etiquetado de versión (git tag).
+
+***
 
 ## 3. Prototipos
 Se trabajó con un editor de gráficos vectorial y una herramienta de generación de prototipos ([Figma](http://www.figma.com/?fuid= "Figma")) para tener un diseño más profesional y reflejar lo que la interfaz debería mostrar.
@@ -934,7 +996,7 @@ Se trabajó con un editor de gráficos vectorial y una herramienta de generació
 
 [Directivas estructurales](https://angular.io/guide/structural-directives)
 
-[Input & Ouput](https://angular.io/guide/component-interaction#component-interaction)
+[Input & Output](https://angular.io/guide/component-interaction#component-interaction)
 
 [Creación y uso de servicios](https://angular.io/guide/architecture-services#providing-services)
 
