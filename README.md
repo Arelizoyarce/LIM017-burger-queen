@@ -1,4 +1,4 @@
-# Burger Queen
+<!-- # Burger Queen
 
 ## Índice
 
@@ -810,4 +810,183 @@ yarn start
 * [Qué es eso de serverless? - @PamRucinque en Medium](https://medium.com/@PamRucinque/qu%C3%A9-es-eso-de-serverless-f4f6c8949b87)
 * [Qué es Serverless? | FooBar - YouTube](https://www.youtube.com/watch?v=_SYHUpLi-2U)
 * [Firebase](https://firebase.google.com/)
-* [Serverless Architectures - Martin Fowler](https://www.martinfowler.com/articles/serverless.html)
+* [Serverless Architectures - Martin Fowler](https://www.martinfowler.com/articles/serverless.html) -->
+
+## Índice
+
+* [1. Sobre el proyecto](#1-sobre-el-proyecto)
+* [2. Historias de Usuario](#2-historias-de-usuario)
+* [3. Prototipos](#3-prototipos)
+* [4. Tecnologías y Herramientas](#4-tecnologías-y-herramientas)
+* [5. Objetivos de Aprendizaje](#5-objetivos-de-aprendizaje)
+* [6. Despliegue](#6-despliegue)
+* [7. Autoras](#7-autoras)
+
+## 1. Sobre el proyecto
+La Burguesa es una interfaz diseñada para la gestión de pedidos de un restaurante, con vistas orientadas para los siguientes roles: mesero y chef. Inicia con una vista para el ingreso a la plataforma, la cual se redirecciona a una segunda vista según el respectivo rol ingresado. En el caso de nuestra plataforma se usaron los siguientes correos:
+
+- mesera@laburguesa.com
+- cocinera@laburguesa.com
+
+Ambos con la contraseña: laboratoria
+
+Para el caso del mesero, una vez que se encuentra en su vista correspondiente; puede ir eligiendo qué productos agregar y/o eliminar, asimismo la interfaz muestra el resumen del pedido con el costo total de la orden y de cada producto según la cantidad. Y para el caso del cocinero, una vez que se encuentra en su vista correspondiente; puede visualizar todas las órdenes que el mesero le ha proporcionado con el fin de atenderlas.
+
+La aplicación es una Single Page Aplication, pudiéndose usar como una PWA y de manera offline.
+
+## 2. Historias de Usuario
+HU1: Yo como trabajadorx quiero acceder a la interfaz del usuario con mi email y password y que me redirija a la página que me corresponda segun mi cargo.
+HU2: Yo como meserx quiero tomar el pedido de un cliente para no depender de mi mala memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden.
+H3:Yo como jefx de cocina quiero ver los pedidos de los clientes en orden y marcar cuáles están listos para saber qué se debe cocinar y avisar a lxs meserxs que un pedido está listo para servirlo a un cliente.
+
+## 3. Prototipos
+Se trabajó con un editor de gráficos vectorial y una herramienta de generación de prototipos ([Figma](http://www.figma.com/?fuid= "Figma")) para tener un diseño más profesional y reflejar lo que la interfaz debería mostrar.
+
+#### **Tablet Vista Horizontal**
+![Login horizontal](https://user-images.githubusercontent.com/98605059/178174715-2a0de5ef-e0cf-4a00-900c-8a329eaf9b16.png)
+  
+  ##### **Mesero**
+
+![Vista mesero horizontal- vr 4](https://user-images.githubusercontent.com/98605059/178174783-7f17439d-865d-46be-a04f-0d38f147e281.png)
+![Mesero ver órdenes pendientes-horizontal](https://user-images.githubusercontent.com/98605059/178174829-56c80242-4ef3-4dd4-b1d2-d409caf7001d.png)
+![Mesero ver ordenes entregadas - horizontal](https://user-images.githubusercontent.com/98605059/178174872-150a69dd-b9bc-4be5-97b7-d2b7f409c5ee.png)
+  
+  ##### **Cocinero**
+
+![Cocinero ver ordernes pendientes- horizontal](https://user-images.githubusercontent.com/98605059/178174949-aa00f6ae-6458-4000-9877-019b220ff4d7.png)
+![Cocinero ver ordernes entregados- horizontal](https://user-images.githubusercontent.com/98605059/178174921-7cd53b0b-bb70-492e-b857-ba5ac36ccab9.png)
+
+#### **Tablet Vista Vertical**
+![Login vertical](https://user-images.githubusercontent.com/98605059/178175475-16c3d7bc-8f90-4367-aefc-2f315d1d9c8f.png)
+
+  ##### **Mesero**
+  
+![Vista mesero vertical](https://user-images.githubusercontent.com/98605059/178175566-b1b6bc7f-7996-44cd-bbb0-8efa5aa81a98.png)
+![Mesero órdenes pendientes-vertical](https://user-images.githubusercontent.com/98605059/178175600-2a4f0e9a-c140-4f1a-ae6e-1ce1c322708f.png)
+![Mesero órdenes entregados-vertical](https://user-images.githubusercontent.com/98605059/178175636-25b5385c-d807-4b5e-b550-a83ea6d7c3bc.png)
+  
+  ##### **Cocinero**
+
+![cocinero órdenes pendientes-vertical](https://user-images.githubusercontent.com/98605059/178175746-714d66c0-0494-4e1d-856d-620c6913a754.png)
+![cocinero órdenes entregadas-vertical](https://user-images.githubusercontent.com/98605059/178175794-098b7733-212a-4689-a646-728d6879c6ee.png)
+
+## 4. Tecnologías y Herramientas
+![GitHub](https://img.shields.io/badge/-GitHub-181717?style=plastic&logo=github)
+![Angular](https://img.shields.io/badge/-Angular-8B0000?style=plastic&logo=angular)
+![Typescript](https://img.shields.io/badge/-Typescript-000080?style=plastic&logo=typescript)
+![Firebase](https://img.shields.io/badge/-Firebase-181717?style=plastic&logo=firebase)
+![Figma](https://img.shields.io/badge/-Figma-634DFF?style=plastic&logo=figma)
+![Karma](https://img.shields.io/badge/-Karma-5DC19?style=plastic&logo=karma)
+![Jasmine](https://img.shields.io/badge/-Jasmine-4C2882?style=plastic&logo=jasmine)
+
+## 5. Objetivos de Aprendizaje
+#### Uso de HTML semántico
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+      <title>Hello world!</title>
+  </head>
+  <body>
+	<main>
+	  <header>
+	    <h1>Hello world!</h1>
+	  </header>
+  </main>
+	<footer></footer>
+	<script></script>
+  </body>
+</html>
+```
+#### Selectores, modelo de caja, flexbox, Grid y Media Queries en CCS
+
+[CSS Selectors-MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors "CSS Selectors-MDN")
+
+[Box Model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model "Box Model")
+
+[Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox "Flexbox")
+
+[Grids](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
+
+[Media queries](https://developer.mozilla.org/es/docs/CSS/Media_queries)
+
+[Responsive Design](https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Responsive_Design "Responsive Design")
+
+#### Javascript
+
+[Métodos de Array-MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array "Métodos de Array")
+
+[Objetos](https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/Basics)
+
+[EventTarget.addEventListener()-MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener "Evento AddEventListener-MDN")
+
+[Condicionales-MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals "Condicionales-MDN")
+
+[Funciones(Parámetros y argumentos)-MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions "Funciones(Parámetros y argumentos)-MDN")
+
+#### Angular
+
+[Angular Componentes](https://angular.io/guide/component-overview)
+
+[Introducción a componentes y plantillas](https://angular.io/guide/architecture-components#introduction-to-components)
+
+[Directivas estructurales](https://angular.io/guide/structural-directives)
+
+[Input & Ouput](https://angular.io/guide/component-interaction#component-interaction)
+
+[Creación y uso de servicios](https://angular.io/guide/architecture-services#providing-services)
+
+[Manejo de rutas](https://angular.io/guide/router)
+
+[Creación y uso de observables](https://angular.io/guide/observables-in-angular)
+
+[Uso de HttpClient](https://angular.io/guide/http)
+
+[Estilos de componentes](https://angular.io/guide/template-syntax#built-in-directives)
+
+#### Es Modules y Test
+
+[ECMAScript (ES Modules-Import)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import "ECMAScript (ES Modules-Import)")
+
+[ECMAScript (ES Modules-Export)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/export "ECMAScript (ES Modules-Export)")
+
+[Karma](https://angular.io/guide/testing)
+
+[Jasmine](https://www.digitalocean.com/community/tutorials/testing-angular-with-jasmine-and-karma-part-1)
+
+#### CallBack y Promesas
+
+[Función CallBack](https://developer.mozilla.org/es/docs/Glossary/Callback_function "CallBack")
+
+[Promise](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise "Promesas")
+
+[Cómo escribir una promesa de JavaScript](https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/ "Promesas")
+
+#### Firebase
+
+[Documentación oficial Firebase](https://firebase.google.com/docs/firestore?hl=es "Firebase")
+
+[Reglas de seguridad Firebase](https://firebase.google.com/docs/rules?hl=es "Firebase")
+
+[Primeros pasos con Firebase-Autenticación](https://firebase.google.com/docs/auth/web/start?hl=es "Firebase")
+
+[Administra usuarios en Firebase](https://firebase.google.com/docs/auth/web/manage-users?hl=es#get_the_currently_signed-in_user "Firebase")
+
+[Agregar datos a Cloud Firebase](https://firebase.google.com/docs/firestore/manage-data/add-data "Firebase")
+
+[Obtén actualizaciones en tiempo real-Firebase](https://firebase.google.com/docs/firestore/query-data/listen?hl=es "Firebase")
+
+#### Control de versiones(Git y GitHub)
+
+[Página Oficial GitHub](https://pages.github.com/ "Página Oficial GitHub")
+
+[Ramas en GitHub](https://www.atlassian.com/es/git/tutorials/using-branches)
+
+[GitHub Project](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects)
+## 6. Despliegue
+
+## 7. Autoras
+- [Areliz Oyarce](https://github.com/Arelizoyarce)
+- [Cinthia Velásquez](https://github.com/CinthiaVB)
