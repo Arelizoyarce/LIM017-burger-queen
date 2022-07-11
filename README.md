@@ -905,32 +905,20 @@ Lo acordado que debe ocurrir para decir que la historia está terminada.
 Se trabajó con un editor de gráficos vectorial y una herramienta de generación de prototipos ([Figma](http://www.figma.com/?fuid= "Figma")) para tener un diseño más profesional y reflejar lo que la interfaz debería mostrar.
 
 #### **Tablet Vista Horizontal**
-![Login horizontal](https://user-images.githubusercontent.com/98605059/178174715-2a0de5ef-e0cf-4a00-900c-8a329eaf9b16.png)
-  
   ##### **Mesero**
-
-![Vista mesero horizontal- vr 4](https://user-images.githubusercontent.com/98605059/178174783-7f17439d-865d-46be-a04f-0d38f147e281.png)
-![Mesero ver órdenes pendientes-horizontal](https://user-images.githubusercontent.com/98605059/178174829-56c80242-4ef3-4dd4-b1d2-d409caf7001d.png)
-![Mesero ver ordenes entregadas - horizontal](https://user-images.githubusercontent.com/98605059/178174872-150a69dd-b9bc-4be5-97b7-d2b7f409c5ee.png)
+![loginMeseroHorizontal](https://user-images.githubusercontent.com/98605059/178320720-15a49a2d-4434-48eb-8c88-d4db7d14f885.png)
+![meseroOrdenesHorizontal](https://user-images.githubusercontent.com/98605059/178320863-cbfb522f-a9c3-4a2a-818a-97396f8bfccc.png)
   
   ##### **Cocinero**
-
-![Cocinero ver ordernes pendientes- horizontal](https://user-images.githubusercontent.com/98605059/178174949-aa00f6ae-6458-4000-9877-019b220ff4d7.png)
-![Cocinero ver ordernes entregados- horizontal](https://user-images.githubusercontent.com/98605059/178174921-7cd53b0b-bb70-492e-b857-ba5ac36ccab9.png)
+![cocineroHorizontal](https://user-images.githubusercontent.com/98605059/178320929-9dedc5a5-9a6b-4b4e-893e-5f50ea13f6ef.png)
 
 #### **Tablet Vista Vertical**
-![Login vertical](https://user-images.githubusercontent.com/98605059/178175475-16c3d7bc-8f90-4367-aefc-2f315d1d9c8f.png)
-
   ##### **Mesero**
-  
-![Vista mesero vertical](https://user-images.githubusercontent.com/98605059/178175566-b1b6bc7f-7996-44cd-bbb0-8efa5aa81a98.png)
-![Mesero órdenes pendientes-vertical](https://user-images.githubusercontent.com/98605059/178175600-2a4f0e9a-c140-4f1a-ae6e-1ce1c322708f.png)
-![Mesero órdenes entregados-vertical](https://user-images.githubusercontent.com/98605059/178175636-25b5385c-d807-4b5e-b550-a83ea6d7c3bc.png)
+![loginMeseroVertical](https://user-images.githubusercontent.com/98605059/178321033-17dcf5ac-44cf-4acb-bb74-61ced0ab8460.png)  
+![meseroOrdenesVertical](https://user-images.githubusercontent.com/98605059/178321104-c881aa28-cf95-4d3f-bf92-4f34e08261c5.png)
   
   ##### **Cocinero**
-
-![cocinero órdenes pendientes-vertical](https://user-images.githubusercontent.com/98605059/178175746-714d66c0-0494-4e1d-856d-620c6913a754.png)
-![cocinero órdenes entregadas-vertical](https://user-images.githubusercontent.com/98605059/178175794-098b7733-212a-4689-a646-728d6879c6ee.png)
+![cocineroVertical](https://user-images.githubusercontent.com/98605059/178320599-9298cbd5-e7ac-498a-b14e-9f7864684f88.png)
 
 ## 4. Tecnologías y Herramientas
 ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=plastic&logo=github)
