@@ -32,6 +32,7 @@ import { NavbarChefComponent } from './components/chef/navbar-chef/navbar-chef.c
 import { OrdersComponent } from './components/chef/orders/orders.component';
 import { ModalComponent } from './components/chef/modal/modal.component';
 import { CdTimerModule } from 'angular-cd-timer';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,13 @@ import { CdTimerModule } from 'angular-cd-timer';
     MatToolbarModule,
     MatSidenavModule,
     MatDialogModule,
-    CdTimerModule
+    CdTimerModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
