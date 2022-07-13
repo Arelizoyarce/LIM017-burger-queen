@@ -7,5 +7,6 @@ export default interface receivedOrderFirestore {
     order: orderProduct[],
     time: number,
     status: string,
-    total: number
+    total: number,
+    updateTime: string,
 }

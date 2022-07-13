@@ -39,9 +39,9 @@ export class FirestoreService {
     const docRef= doc(this.firestore, 'orders', id)
     return updateDoc(docRef, { status: statusValue})
   }
-  updateTimer(id: string, timerValue: number){
+  updateTime(id: string, timerValue: string){
     const docRef= doc(this.firestore, 'orders', id)
-    return updateDoc(docRef, { timer: timerValue})
+    return updateDoc(docRef, { updateTime: timerValue})
   }
 }
 

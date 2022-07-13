@@ -31,7 +31,8 @@ export class OrdersComponent implements OnInit {
   changeStatusOrder(index: number){
     const statusValue = this.orders[index].status = 'Done'
     const date = new Date()
-    this.updateDate = `${date.toString().slice(1,-33)}`
+    this.updateDate = `${date.toString().slice(0,-33)}`
+    this.firestore.updateTime(this.orders[index].id , this.updateDate)
     this.firestore.updateStatus(this.orders[index].id , statusValue)
   }
 

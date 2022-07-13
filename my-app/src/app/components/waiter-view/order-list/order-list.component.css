@@ -86,13 +86,6 @@ background: rgba(251, 98, 96, 1);
 
 }
 
-.faCirclePlus{
-  filter: invert(24%) sepia(99%) saturate(1897%) hue-rotate(93deg) brightness(96%) contrast(107%);
-}
-
-.faCircleMinus{
-  filter: invert(12%) sepia(68%) saturate(7324%) hue-rotate(4deg) brightness(107%) contrast(119%);
-}
 button{
   background-color: black;
   color: #fff;

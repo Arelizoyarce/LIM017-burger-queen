@@ -62,6 +62,7 @@ export class OrderListComponent implements OnInit {
       time: new Date().toString().slice(0,-33),
       status: 'Pending',
       total: this.total,
+      updateTime: new Date().toString().slice(0,-33)
     }
     this.firestore.addOrder(this.finalOrder)
     this.orderListProduct =[]

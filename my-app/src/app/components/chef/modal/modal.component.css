@@ -1,8 +1,20 @@
-body{
-    background: white;
-    color: black;
+.containerDialog{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
 }
-img{
-    width: 900px;
-    height: 900px;
+div h1 {
+    color: #f9f8f8;
+}
+.iconContainer{
+    height: 60px;
+    background-color: #f7f5f5;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 }

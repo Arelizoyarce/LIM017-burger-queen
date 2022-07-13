@@ -18,7 +18,7 @@
                 <hr>
                 <p> Received at: {{item.time}}</p>
                 <hr>
-                <p *ngIf="item.status === 'Done'"> Update at: {{updateDate}}</p>
+                <p *ngIf="item.status === 'Done'"> Update at: {{item.updateTime}}</p>
                 <hr *ngIf="item.status === 'Done'">
                 <div class="containerTitles">
                     <p>Amount</p>
