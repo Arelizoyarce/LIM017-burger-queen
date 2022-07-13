@@ -7,5 +7,4 @@ export default interface sendOrderList {
     time: string,
     status: string,
     total: number,
-    timer: number
 }

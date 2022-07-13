@@ -4,7 +4,7 @@
         <mat-card class="orderCard" *ngFor="let item of orders; index as index"
             [ngStyle]="{'background-color': item.status === 'Done'?'#A0FFBB':'#FFC0A0'}">
             <mat-card-header class="headerCard block One">
-                <mat-card-title>Mesa: {{item.table}}</mat-card-title>
+                <mat-card-title>Table:{{item.table}}</mat-card-title>
                 <div>
                     <mat-card-subtitle>{{item.status}}</mat-card-subtitle>
                     <fa-icon *ngIf="router.url === '/take-orders/orders' && item.status === 'Pending'"
@@ -14,16 +14,15 @@
             </mat-card-header>
             <hr>
             <mat-card-content value="{{item.status}}" class="block Two">
-                <p>Cliente: {{item.client}}</p>
+                <p>Client: {{item.client}}</p>
                 <hr>
-                <div class="containerHeader">
-                    <p>{{item.time}}</p>
-                    <p></p>
-                    <!-- <cd-timer format="hms" #basicTimer [startTime]="timerForEachOrder[index]" (onTick)="updateTimer(basicTimer, index)" *ngIf="item.status==='Pending'" ></cd-timer> -->
-                </div>
+                <p> Received at: {{item.time}}</p>
+                <hr>
+                <p *ngIf="item.status === 'Done'"> Update at: {{updateDate}}</p>
+                <hr *ngIf="item.status === 'Done'">
                 <div class="containerTitles">
-                    <p>Cantidad</p>
-                    <p>Productos</p>
+                    <p>Amount</p>
+                    <p>Products</p>
                 </div>
                 <div class="contentSummary" *ngFor="let itemAux of item.order">
                     <p>{{itemAux.amount}}</p>
@@ -35,9 +34,8 @@
             <mat-card-actions class="block Three">
                 <button mat-button *ngIf="router.url === '/chef-view' && item.status==='Pending'"
                      (click)="changeStatusOrder(index)"
-                    (click)="openDialog('0ms', '0ms')">Actualizar pedido</button>
+                    (click)="openDialog('0ms', '0ms')">Update order</button>
             </mat-card-actions>
-            <p>{{timeMinute}}:{{timeLeft}}</p>
         </mat-card>
     </div>
 </section>

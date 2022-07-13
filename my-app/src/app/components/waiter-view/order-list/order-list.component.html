@@ -1,7 +1,7 @@
 <div class="orderSection">
   <section class="containerData">
     <div>
-      <label for="name">Nombre del cliente:</label>
+      <label for="name">Customer name:</label>
       <input type="text" class="nameWaiter" id="name" [formControl]="nameClient">
     </div>
     <select class="numberTable" [formControl]="table">
@@ -16,33 +16,27 @@
   <table class="tableContainer">
     <thead>
       <tr>
-        <td >Producto</td>
-        <td colspan="3">Cantidad</td>
-        <td >Precio</td>
+        <td>Product</td>
+        <td>Amount</td>
+        <td colspan="2">Price</td>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of orderListProduct">
         <td>{{item.name}}</td>
-        <td>
-          <fa-icon class="faCirclePlus" [icon]="faCirclePlus"></fa-icon>
-        </td>
         <td>{{item.amount}}</td>
+        <td>${{item.price}}</td>
         <td>
-          <fa-icon class="faCircleMinus" [icon]="faCircleMinus"></fa-icon>
-        </td>
-        <td>{{item.price}}</td>
-        <td>
-          <fa-icon class="iconTrash" [icon]="faTrashCan" (click)="deleteProduct(item.index)">IconoTrash</fa-icon>
+          <fa-icon class="iconTrash" [icon]="faTrashCan" (click)="deleteProduct(item.index)"></fa-icon>
         </td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="4">Total</td>
-        <td colspan="2">{{totalPrice()}}</td>
+        <td colspan="2">Total</td>
+        <td colspan="2">${{totalPrice()}}</td>
       </tr>
     </tfoot>
   </table>
 </div>
-  <button (click)="sendOrder()">Enviar Orden</button>
+<button (click)="sendOrder()">Send order</button>

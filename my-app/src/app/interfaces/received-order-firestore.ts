@@ -8,5 +8,4 @@ export default interface receivedOrderFirestore {
     time: number,
     status: string,
     total: number
-    timer: number
 }

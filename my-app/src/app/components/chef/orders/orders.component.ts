@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import receivedOrderFirestore from 'src/app/interfaces/received-order-firestore';
 import { FirestoreService } from 'src/app/services/services-firestore/firestore.service';
 import {MatDialog} from '@angular/material/dialog';
@@ -12,8 +12,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-  faTrash = faTrash
-  allProducts: any[]=[]
+  updateDate: string;
+  faTrash = faTrash;
+  allProducts = [];
   orders: receivedOrderFirestore[] = []
  
   constructor(private firestore: FirestoreService,
@@ -29,6 +30,8 @@ export class OrdersComponent implements OnInit {
 
   changeStatusOrder(index: number){
     const statusValue = this.orders[index].status = 'Done'
+    const date = new Date()
+    this.updateDate = `${date.toString().slice(1,-33)}`
     this.firestore.updateStatus(this.orders[index].id , statusValue)
   }
 
@@ -59,26 +62,27 @@ export class OrdersComponent implements OnInit {
     this.firestore.deleteOrder(id)
   }
 
-  timeLeft: number;
-  timeMinute: number
-interval
+//   timeLeft: number = 0;
+//   timeMinute: number;
+//   interval: NodeJS.Timer
 
-  startTimer() {
-    console.log('estoy siendo ejecutado')
-    return this.interval = setInterval(()=> {
-     if(this.timeLeft < 0) {
-       this.timeLeft--;
-     } else {
-       this.timeLeft += 1;
-       if(this.timeLeft === 60){
-         this.timeMinute += 1
-         this.timeLeft = 0
-       }
-     }
-   },1000)
- }
+//   startTimer(minute : number): string {
+//     this.interval = setInterval(()=> {
+//      if(this.timeLeft < 0) {
+//        this.timeLeft--;
+//      } else {
+//        this.timeLeft += 1;
+//        if(this.timeLeft === 60000){
+//          const timeMinute= minute+= 1
+//          this.timeLeft = 0
+//        }
+//      }
+//    },1000)
+//    this.firestore.updateTimer(id, this.timeMinute)
+//    return `${this.timeMinute}min`
+//  }
 
- pauseTimer() {
-   clearInterval(this.interval);
- }
+//  pauseTimer() {
+//    clearInterval(this.interval);
+//  }
 }

@@ -4,8 +4,8 @@
       <img src="../../../assets/img/burgerLogo.png" />
       <h1>La Burguesa</h1>
     </div>
-    <button routerLink="orders" *ngIf="router.url === '/take-orders'">Ver Pedidos</button>
-    <button *ngIf="router.url === '/take-orders/orders'" routerLink="./">Tomar orden</button>
+    <button routerLink="orders" *ngIf="router.url === '/take-orders'">See orders</button>
+    <button *ngIf="router.url === '/take-orders/orders'" routerLink="./">Take orders</button>
   </mat-toolbar>
 </div>
 <router-outlet></router-outlet>

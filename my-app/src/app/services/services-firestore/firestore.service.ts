@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { collection, Firestore, getDoc, doc, collectionData, addDoc } from '@angular/fire/firestore';
+import { collection, Firestore, getDoc, doc, collectionData, addDoc, DocumentData, DocumentReference } from '@angular/fire/firestore';
 import { deleteDoc, updateDoc } from '@firebase/firestore';
 import { Observable } from 'rxjs';
 import Product from 'src/app/interfaces/product.interface';
@@ -35,9 +35,13 @@ export class FirestoreService {
   return deleteDoc(orderDocRef);
   }
 
-  updateStatus(id: string, statusValue: string): any {
+  updateStatus(id: string, statusValue: string): Promise<void> {
     const docRef= doc(this.firestore, 'orders', id)
     return updateDoc(docRef, { status: statusValue})
+  }
+  updateTimer(id: string, timerValue: number){
+    const docRef= doc(this.firestore, 'orders', id)
+    return updateDoc(docRef, { timer: timerValue})
   }
 }
 
