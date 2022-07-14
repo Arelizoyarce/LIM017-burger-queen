@@ -1,9 +1,9 @@
 <div class="orderSection">
-  <div class="containerData">
-    <h4>Mesero:<input type="text" class="nameWaiter" [formControl]="nameWaiter"></h4>
-    <h4 class="numberId">ID:<input type="text"></h4>
-  </div>
-  <div>
+  <section class="containerData">
+    <div>
+      <label for="name">Customer name:</label>
+      <input type="text" class="nameWaiter" id="name" [formControl]="nameClient">
+    </div>
     <select class="numberTable" [formControl]="table">
       <option value=1>Mesa 01</option>
       <option value=2>Mesa 02</option>
@@ -11,31 +11,32 @@
       <option value=4>Mesa 04</option>
       <option value=5>Mesa 05</option>
       <option value=6>Mesa 06</option>
-    </select> 
-  </div>
+    </select>
+  </section>
   <table class="tableContainer">
     <thead>
       <tr>
-        <td align="center">Producto</td>
-        <td colspan="3" align="center">Cantidad</td>
-        <td align="center">Precio</td>
+        <td>Product</td>
+        <td>Amount</td>
+        <td colspan="2">Price</td>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of orderListProduct">
         <td>{{item.name}}</td>
-        <td><fa-icon class="faCirclePlus" [icon]="faCirclePlus" (click)="amoutIncrements()"></fa-icon></td>
         <td>{{item.amount}}</td>
-        <td><fa-icon class="faCircleMinus" [icon]="faCircleMinus"></fa-icon></td>
-        <td>{{item.price}}</td>
-        <td><fa-icon class="iconTrash" [icon]="faTrashCan" (click)="deleteProduct(item.index)>IconoTrash</fa-icon></td>
+        <td>${{item.price}}</td>
+        <td>
+          <fa-icon class="iconTrash" [icon]="faTrashCan" (click)="deleteProduct(item.index)"></fa-icon>
+        </td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="4">Total</td>
-        <td colspan="2" align="left">{{totalPrice()}}</td>
+        <td colspan="2">Total</td>
+        <td colspan="2">${{totalPrice()}}</td>
       </tr>
     </tfoot>
   </table>
-  <button class="orderBtn" (click)="sendOrder()">Enviar Orden</button>
+</div>
+<button (click)="sendOrder()">Send order</button>

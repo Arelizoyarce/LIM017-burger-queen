@@ -1,19 +1,18 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
-// import { Router} from '@angular/router';
 
-// import { TakeOrdersComponent } from './take-orders.component';
+// import { NavbarChefComponent } from './navbar-chef.component';
 
-// describe('TakeOrdersComponent', () => {
-//   let component: TakeOrdersComponent;
-//   let fixture: ComponentFixture<TakeOrdersComponent>;
+// describe('NavbarChefComponent', () => {
+//   let component: NavbarChefComponent;
+//   let fixture: ComponentFixture<NavbarChefComponent>;
 
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
-//       declarations: [ TakeOrdersComponent ]
+//       declarations: [ NavbarChefComponent ]
 //     })
 //     .compileComponents();
 
-//     fixture = TestBed.createComponent(TakeOrdersComponent);
+//     fixture = TestBed.createComponent(NavbarChefComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

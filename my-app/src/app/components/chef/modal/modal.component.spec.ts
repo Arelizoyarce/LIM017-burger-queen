@@ -1,18 +1,18 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { ChefViewComponent } from '../../components/chef-view/chef-view.component';
+// import { ModalComponent } from './modal.component';
 
-// describe('ChefViewComponent', () => {
-//   let component: ChefViewComponent;
-//   let fixture: ComponentFixture<ChefViewComponent>;
+// describe('ModalComponent', () => {
+//   let component: ModalComponent;
+//   let fixture: ComponentFixture<ModalComponent>;
 
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
-//       declarations: [ ChefViewComponent ]
+//       declarations: [ ModalComponent ]
 //     })
 //     .compileComponents();
 
-//     fixture = TestBed.createComponent(ChefViewComponent);
+//     fixture = TestBed.createComponent(ModalComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

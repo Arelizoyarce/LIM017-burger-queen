@@ -29,7 +29,7 @@ export class LogInComponent implements OnInit {
   submit() {
     return this.firebase.login(this.dataUser.value.email, this.dataUser.value.password)
       .then((data) => {
-        console.log(data)
+        console.log('LINEA 322222222222222222222222' , data)
         this.firestore.getUserRole(data.user.uid)
           .then((docResult) => {
             if (docResult['role'] === 'waiter') {
@@ -39,7 +39,8 @@ export class LogInComponent implements OnInit {
               this.newRoute.navigate(['/chef-view']);
             }
           })
-      }).catch(() => {
+      }).catch((err) => {
+        console.log('ESTOY EN EL CATCH' , err)
         this.errRol();
       })
 

@@ -1,9 +1,9 @@
-.lateralMenu{
+.containerLateralMenu{
+    height: 100%;
+    width: 80px;
+    position: fixed;
     background: #FFC0A0;   
     background-color: linear-gradient(179.1deg, #FFC0A0 30.47%, rgba(255, 192, 160, 0) 120.55%);
-    width: 80px;
-    height: 100%;
-    position: fixed;
 }
 
 .containerIcon{
@@ -21,7 +21,7 @@
     cursor:pointer;
     position: relative;
     color:#000000;
-  }
+}
 
 .iconLateralMenu{
     font-size: 25px;
@@ -36,7 +36,7 @@
     justify-content: center;
     cursor:pointer;
     color:#000000;
-  }
+}
 
 .boxIcon h5 {
   margin-top: 3px;
@@ -44,12 +44,14 @@
   padding-right:5px;
 }
 
+/*barra animación*/
 .selected:before {
-  content: '';
-  width: 4px;
-  height: 70%;
-  background: #111111;
-  position: absolute;
-  top: 15%;
-  left: -10px;
+    content: '';
+    width: 4px;
+    height: 70%;
+    background: #111111;
+    position: absolute;
+    top: 15%;
+    left: -10px;
 }
+  
