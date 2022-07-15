@@ -812,6 +812,8 @@ yarn start
 * [Firebase](https://firebase.google.com/)
 * [Serverless Architectures - Martin Fowler](https://www.martinfowler.com/articles/serverless.html) -->
 
+# LA BURGUESA 🍔
+
 ## Índice
 
 * [1. Sobre el proyecto](#1-sobre-el-proyecto)
@@ -823,7 +825,7 @@ yarn start
 * [7. Autoras](#7-autoras)
 
 ## 1. Sobre el proyecto
-La Burguesa es una interfaz diseñada para la gestión de pedidos de un restaurante, con vistas orientadas para los siguientes roles: mesero y chef. Inicia con una vista para el ingreso a la plataforma, la cual se redirecciona a una segunda vista según el respectivo rol ingresado. En el caso de nuestra plataforma se usaron los siguientes correos:
+[La Burguesa](https://boisterous-squirrel-2b3a14.netlify.app/log-in) es una interfaz diseñada para la gestión de pedidos de un restaurante, con vistas orientadas para los siguientes roles: mesero y chef. Inicia con una vista para el ingreso a la plataforma, la cual se redirecciona a una segunda vista según el respectivo rol ingresado. En el caso de nuestra plataforma se usaron los siguientes correos:
 
 - mesera@laburguesa.com
 - cocinera@laburguesa.com
@@ -832,7 +834,7 @@ Ambos con la contraseña: laboratoria
 
 Para el caso del mesero, una vez que se encuentra en su vista correspondiente; puede ir eligiendo qué productos agregar y/o eliminar, asimismo la interfaz muestra el resumen del pedido con el costo total de la orden y de cada producto según la cantidad. Y para el caso del cocinero, una vez que se encuentra en su vista correspondiente; puede visualizar todas las órdenes que el mesero le ha proporcionado con el fin de atenderlas.
 
-La aplicación es una Single Page Application, pudiéndose usar como una PWA y de manera offline.
+La aplicación es una Single Page Application, pudiéndose usar como una PWA con el objetivo que se similar a una aplicación nativa.
 
 ## 2. Historias de Usuario
 
@@ -851,7 +853,6 @@ Lo acordado que debe ocurrir para decir que la historia está terminada.
 
 * Debes haber recibido code review de al menos una compañera.
 * Testear funciones y/ componentes.
-* Despliegue de aplicación y etiquetado de versión (git tag).
 
 ***
 
@@ -874,7 +875,6 @@ Lo acordado que debe ocurrir para decir que la historia está terminada.
 
 * Debes haber recibido code review de al menos una compañera.
 * Testar componentes y funciones realizadas.
-* Despliegue de aplicación y etiquetado de versión (git tag).
 
 ***
 
@@ -897,7 +897,6 @@ Lo acordado que debe ocurrir para decir que la historia está terminada.
 
 * Debes haber recibido code review de al menos una compañera.
 * Testar componentes y funciones realizadas.
-* Despliegue de aplicación y etiquetado de versión (git tag).
 
 ***
 
@@ -1036,6 +1035,10 @@ Se trabajó con un editor de gráficos vectorial y una herramienta de generació
 
 [GitHub Project](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects)
 ## 6. Despliegue
+
+[La Burguesa🍔](https://boisterous-squirrel-2b3a14.netlify.app/log-in)
+
+<img src="https://i.pinimg.com/originals/29/68/f9/2968f995e93c22f75b89fa0f15ac33ed.gif" style="width: 200px">
 
 ## 7. Autoras
 - [Areliz Oyarce](https://github.com/Arelizoyarce)
